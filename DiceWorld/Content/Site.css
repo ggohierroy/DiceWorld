@@ -2,4 +2,16 @@
     color: red;
 }
 
+/* Pushes the body down since the top navbar is static */
 body { padding-top: 70px; }
+
+/* Overrides the 100% width set by bootstrap */
+#cardNumber, #cvc, #expirationMonth, #expirationYear {
+    width: auto;
+}
+
+#expirationMonth, #expirationYear {
+    display: inline-block;
+    margin-bottom: 0;
+    vertical-align: middle;
+}
