@@ -1,0 +1,18 @@
+﻿<script type="text/x-handlebars" data-template-name="catalogue">
+    <div class="container">
+
+        <div class="row">
+            {{#each boardGame in controller}}
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="thumbnail">
+                    <img {{bind-attr src=boardGame.imageUrl}} alt="...">
+                    <div class="caption">
+                        <h4>{{boardGame.name}}</h4>
+                        <p><a href="#" class="btn btn-primary" role="button">More</a> <a href="#" class="btn btn-default pull-right" role="button">34.95$ <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a></p>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+</script>

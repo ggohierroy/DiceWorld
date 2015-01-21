@@ -1,5 +1,10 @@
-﻿using System.Web;
+﻿using System;
+using System.IO;
+using System.Net;
+using System.Text.RegularExpressions;
+using System.Web;
 using System.Web.Optimization;
+using DiceWorld.Models;
 
 namespace DiceWorld
 {
@@ -9,7 +14,7 @@ namespace DiceWorld
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-{version}.js"));
+                        "~/Scripts/jquery-2.1.1.min.js"));
 
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
@@ -17,20 +22,21 @@ namespace DiceWorld
                         "~/Scripts/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                      "~/Scripts/bootstrap.js",
-                      "~/Scripts/respond.js"));
+                      "~/Scripts/bootstrap.min.js",
+                      "~/Scripts/respond.min.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/ember").Include(
-                      "~/Scripts/handlebars.js",
-                      "~/Scripts/ember.debug.js"));
+                      "~/Scripts/handlebars.min.js",
+                      "~/Scripts/ember.debug.js",
+                      "~/Scripts/ember-data.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/emberApp").Include(
                     "~/Scripts/Application/application.js",
                     "~/Scripts/Controllers/*.js",
                     "~/Scripts/Models/*.js",
-                    "~/Scripts/Routes/*.js",
-                    "~/Scripts/Components/*.js",
-                    "~/Scripts/Views/*.js"));
+                    "~/Scripts/Routes/*.js"/*,
+                    "~/Scripts/Views/*.js",
+                    "~/Scripts/Components/*.js"*/));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
