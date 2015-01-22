@@ -23,7 +23,8 @@ namespace DiceWorld
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.min.js",
-                      "~/Scripts/respond.min.js"));
+                      "~/Scripts/respond.min.js",
+                      "~/Scripts/typeahead.bundle.min.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/ember").Include(
                       "~/Scripts/handlebars.min.js",
