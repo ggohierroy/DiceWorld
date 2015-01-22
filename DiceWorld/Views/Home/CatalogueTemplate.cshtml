@@ -1,7 +1,21 @@
 ﻿<script type="text/x-handlebars" data-template-name="catalogue">
     <div class="container">
+        
+        <!-- Pagination -->
+        <div class="input-group col-centered">
+            <span class="input-group-btn reset-width">
+                <button type="button" class="btn btn-default" {{action fastBackward}}><span class="glyphicon glyphicon-fast-backward"></span></button>
+                <button type="button" class="btn btn-default" {{action previous}}><span class="glyphicon glyphicon-step-backward"></span></button>
+            </span>
+            {{input type="text"value=inputPage action="updatePage" on="insert-newline" class="form-control text-center reset-width" size="1" maxlength="3" id="inputPage"}}
+            <span class="input-group-addon reset-width hidden-xs">of {{totalPages}}</span>
+            <span class="input-group-btn reset-width">
+                <button type="button" class="btn btn-default" {{action next}}><span class="glyphicon glyphicon-step-forward"></span></button>
+                <button type="button" class="btn btn-default" {{action fastForward}}><span class="glyphicon glyphicon-fast-forward"></span></button>
+            </span>
+        </div>
 
-        <div class="row">
+        <div class="row spacer">
             {{#each boardGame in controller}}
             <div class="col-lg-3 col-md-4 col-sm-6">
                 <div class="thumbnail">
@@ -13,6 +27,20 @@
                 </div>
             </div>
             {{/each}}
+        </div>
+        
+        <!-- Pagination -->
+        <div class="input-group col-centered">
+            <span class="input-group-btn reset-width">
+                <button type="button" class="btn btn-default" {{action fastBackward}}><span class="glyphicon glyphicon-fast-backward"></span></button>
+                <button type="button" class="btn btn-default" {{action previous}}><span class="glyphicon glyphicon-step-backward"></span></button>
+            </span>
+            {{input type="text"value=inputPage action="updatePage" on="insert-newline" class="form-control text-center reset-width" size="1" maxlength="3" id="inputPage"}}
+            <span class="input-group-addon reset-width hidden-xs">of {{totalPages}}</span>
+            <span class="input-group-btn reset-width">
+                <button type="button" class="btn btn-default" {{action next}}><span class="glyphicon glyphicon-step-forward"></span></button>
+                <button type="button" class="btn btn-default" {{action fastForward}}><span class="glyphicon glyphicon-fast-forward"></span></button>
+            </span>
         </div>
     </div>
 </script>

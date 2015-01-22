@@ -6,14 +6,27 @@
 body { padding-top: 70px; }
 
 /* Overrides the 100% width set by bootstrap */
-#cardNumber, #cvc, #expirationMonth, #expirationYear {
-    width: auto;
+.reset-width {
+    width: auto !important;
 }
 
+/* Allows having both the input boxes next to each other */
 #expirationMonth, #expirationYear {
     display: inline-block;
     margin-bottom: 0;
     vertical-align: middle;
+}
+
+/* Allows adding spaces between rows */
+.spacer {
+     margin-top:20px;
+}
+
+/* Allows centering a column */
+.col-centered{
+    margin-left: auto;
+    margin-right: auto;
+    float: none;
 }
 
 /*  Tablet  */

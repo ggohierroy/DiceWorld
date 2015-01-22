@@ -9,6 +9,7 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
+using DiceWorld.DTOs;
 using DiceWorld.Models;
 
 namespace DiceWorld.Controllers
@@ -18,9 +19,13 @@ namespace DiceWorld.Controllers
         private DatabaseContext db = new DatabaseContext();
 
         // GET: api/BoardGames
-        public BoardGamesDTO GetBoardGames()
+        public BoardGamesDTO GetBoardGames(int page = 1, int itemsPerPage = 24)
         {
-            return new BoardGamesDTO {BoardGames = db.BoardGames};
+            return new BoardGamesDTO
+            {
+                BoardGames = db.BoardGames.OrderBy(b => b.BoardGameStats.Rank).Skip((page - 1) * itemsPerPage).Take(itemsPerPage), 
+                Meta = new Meta { Total = db.BoardGames.Count() }
+            };
         }
 
         // GET: api/BoardGames/5
