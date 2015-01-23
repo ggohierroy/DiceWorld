@@ -886,6 +886,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\bootstrap.css.map" />
     <None Include="Properties\PublishProfiles\diceworld.pubxml" />
+    <Content Include="Scripts\Components\autocomplete.js" />
     <Content Include="Scripts\ember-data.js.map" />
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -948,7 +949,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Scripts\Components\" />
     <Folder Include="Scripts\Views\" />
   </ItemGroup>
   <ItemGroup>

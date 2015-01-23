@@ -5,7 +5,7 @@
                 <form>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Keyword</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter keyword">
+                        {{auto-complete type="text" class="typeahead form-control" placeholder="Enter keyword"}}
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1">Password</label>
@@ -28,14 +28,14 @@
                 <!-- Pagination -->
                 <div class="input-group col-centered">
                     <span class="input-group-btn reset-width">
-                        <button type="button" class="btn btn-default" {{action fastbackward}}><span class="glyphicon glyphicon-fast-backward"></span></button>
-                        <button type="button" class="btn btn-default" {{action previous}}><span class="glyphicon glyphicon-step-backward"></span></button>
+                        <button type="button" class="btn btn-default" {{action 'fastBackward'}}><span class="glyphicon glyphicon-fast-backward"></span></button>
+                        <button type="button" class="btn btn-default" {{action 'previous'}}><span class="glyphicon glyphicon-step-backward"></span></button>
                     </span>
-                    {{input type="text"value=inputPage action="updatePage" on="insert-newline" class="form-control text-center reset-width" size="1" maxlength="3" id="inputPage"}}
+                    {{input type="text" value=inputPage action="updatePage" on="insert-newline" class="form-control text-center reset-width" size="1" maxlength="3" id="inputPage"}}
                     <span class="input-group-addon reset-width hidden-xs">of {{totalPages}}</span>
                     <span class="input-group-btn reset-width">
-                        <button type="button" class="btn btn-default" {{action next}}><span class="glyphicon glyphicon-step-forward"></span></button>
-                        <button type="button" class="btn btn-default" {{action fastforward}}><span class="glyphicon glyphicon-fast-forward"></span></button>
+                        <button type="button" class="btn btn-default" {{action 'next'}}><span class="glyphicon glyphicon-step-forward"></span></button>
+                        <button type="button" class="btn btn-default" {{action 'fastForward'}}><span class="glyphicon glyphicon-fast-forward"></span></button>
                     </span>
                 </div>
 
@@ -56,14 +56,14 @@
                 <!-- Pagination -->
                 <div class="input-group col-centered">
                     <span class="input-group-btn reset-width">
-                        <button type="button" class="btn btn-default" {{action fastbackward}}><span class="glyphicon glyphicon-fast-backward"></span></button>
-                        <button type="button" class="btn btn-default" {{action previous}}><span class="glyphicon glyphicon-step-backward"></span></button>
+                        <button type="button" class="btn btn-default" {{action 'fastBackward'}}><span class="glyphicon glyphicon-fast-backward"></span></button>
+                        <button type="button" class="btn btn-default" {{action 'previous'}}><span class="glyphicon glyphicon-step-backward"></span></button>
                     </span>
-                    {{input type="text"value=inputPage action="updatePage" on="insert-newline" class="form-control text-center reset-width" size="1" maxlength="3" id="inputPage"}}
+                    {{input type="text" value=inputPage action="updatePage" on="insert-newline" class="form-control text-center reset-width" size="1" maxlength="3"}}
                     <span class="input-group-addon reset-width hidden-xs">of {{totalPages}}</span>
                     <span class="input-group-btn reset-width">
-                        <button type="button" class="btn btn-default" {{action next}}><span class="glyphicon glyphicon-step-forward"></span></button>
-                        <button type="button" class="btn btn-default" {{action fastforward}}><span class="glyphicon glyphicon-fast-forward"></span></button>
+                        <button type="button" class="btn btn-default" {{action 'next'}}><span class="glyphicon glyphicon-step-forward"></span></button>
+                        <button type="button" class="btn btn-default" {{action 'fastForward'}}><span class="glyphicon glyphicon-fast-forward"></span></button>
                     </span>
                 </div>
             </div>
