@@ -1,15 +1,20 @@
 ﻿<script type="text/x-handlebars" data-template-name="catalogue">
     <div class="container">
         <div class="row">
-            <div class="col-sm-2">
+            <div class="col-sm-3">
                 <form>
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Keyword</label>
-                        {{auto-complete type="text" class="typeahead form-control" placeholder="Enter keyword"}}
+                        <label for="inputKeyword">Keyword</label>
+                        {{auto-complete type="text" class="typeahead form-control" placeholder="Enter keyword" value=inputKeyword id="inputKeyword"}}
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputPassword1">Password</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                        <label>Year Published (From-To)</label>
+                        <div>
+                            <label for="inputPublishedFrom" class="sr-only">Published From</label>
+                            {{input type="text" class="form-control reset-width" value=inputPublishedFrom id="inputPublishedFrom" placeholder="YYYY" size="4"}}
+                            <label for="inputPublishedTo" class="sr-only">Published To</label>
+                            {{input type="text" class="form-control reset-width" value=inputPublishedTo id="inputPublishedTo" placeholder="YYYY" size="4"}}
+                        </div>
                     </div>
                     <div class="form-group">
                         <label for="exampleInputFile">File input</label>
@@ -21,10 +26,10 @@
                             <input type="checkbox"> Check me out
                         </label>
                     </div>
-                    <button type="submit" class="btn btn-default">Submit</button>
+                    <button {{action 'search'}} class="btn btn-default">Search</button>
                 </form>
             </div>
-            <div class="col-sm-10">
+            <div class="col-sm-9">
                 <!-- Pagination -->
                 <div class="input-group col-centered">
                     <span class="input-group-btn reset-width">

@@ -14,22 +14,43 @@ using DiceWorld.Models;
 
 namespace DiceWorld.Controllers
 {
+    [RoutePrefix("api")]
     public class BoardGamesController : ApiController
     {
         private DatabaseContext db = new DatabaseContext();
 
-        // GET: api/BoardGames
-        public BoardGamesDTO GetBoardGames(int page = 1, int itemsPerPage = 24)
+        [Route("boardgames")]
+        public BoardGamesDTO GetBoardGames(int page = 1, int itemsPerPage = 24, string keyword = null)
         {
+            var boardGames = db.BoardGames.AsQueryable();
+
+            if (!string.IsNullOrEmpty(keyword))
+                boardGames = boardGames.Where(b => b.Name.ToLower().Contains(keyword.ToLower()));
+
             return new BoardGamesDTO
             {
-                BoardGames = db.BoardGames.OrderBy(b => b.BoardGameStats.Rank).Skip((page - 1) * itemsPerPage).Take(itemsPerPage), 
-                Meta = new Meta { Total = db.BoardGames.Count() }
+                BoardGames = boardGames.OrderBy(b => b.BoardGameStats.Rank).Skip((page - 1) * itemsPerPage).Take(itemsPerPage),
+                Meta = new Meta { Total = boardGames.Count() }
             };
+        }
+
+        [Route("boardgamesForAutocomplete")]
+        public IQueryable<BoardGamesAutocompleteDTO> GetBoardGamesForAutoComplete(string keyword)
+        {
+            return db.BoardGames
+                .Where(b => b.Name.Contains(keyword))
+                .OrderBy(b => b.BoardGameStats.Rank)
+                .Skip(0).Take(5)
+                .Select(b => new BoardGamesAutocompleteDTO
+                {
+                    Id = b.Id, 
+                    Name = b.Name
+                });
         }
 
         // GET: api/BoardGames/5
         [ResponseType(typeof(BoardGame))]
+        [Route("boardgames/{id:int}")]
         public async Task<IHttpActionResult> GetBoardGame(int id)
         {
             BoardGame boardGame = await db.BoardGames.FindAsync(id);
@@ -43,6 +64,7 @@ namespace DiceWorld.Controllers
 
         // PUT: api/BoardGames/5
         [ResponseType(typeof(void))]
+        [Route("boardgames/{id:int}")]
         public async Task<IHttpActionResult> PutBoardGame(int id, BoardGame boardGame)
         {
             if (!ModelState.IsValid)
@@ -78,6 +100,7 @@ namespace DiceWorld.Controllers
 
         // POST: api/BoardGames
         [ResponseType(typeof(BoardGame))]
+        [Route("boardgames")]
         public async Task<IHttpActionResult> PostBoardGame(BoardGame boardGame)
         {
             if (!ModelState.IsValid)
@@ -93,6 +116,7 @@ namespace DiceWorld.Controllers
 
         // DELETE: api/BoardGames/5
         [ResponseType(typeof(BoardGame))]
+        [Route("boardgames")]
         public async Task<IHttpActionResult> DeleteBoardGame(int id)
         {
             BoardGame boardGame = await db.BoardGames.FindAsync(id);
@@ -120,5 +144,11 @@ namespace DiceWorld.Controllers
         {
             return db.BoardGames.Count(e => e.Id == id) > 0;
         }
+    }
+
+    public class BoardGamesAutocompleteDTO
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
     }
 }

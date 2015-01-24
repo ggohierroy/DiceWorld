@@ -1,26 +1,31 @@
 ﻿App.AutoCompleteComponent = Ember.TextField.extend({
     didInsertElement: function () {
-        debugger;
         var engine = new Bloodhound({
-            name: 'animals',
-            local: [{ val: 'dog' }, { val: 'pig' }, { val: 'moose' }],
-            //remote: 'http://example.com/animals?q=%QUERY',
+            prefetch: "/Content/boardGames.json",
+            remote: 'api/boardgamesForAutocomplete?keyword=%QUERY',
             datumTokenizer: function (d) {
-                return Bloodhound.tokenizers.whitespace(d.val);
+                return Bloodhound.tokenizers.whitespace(d.name);
             },
-            queryTokenizer: Bloodhound.tokenizers.whitespace
+            queryTokenizer: Bloodhound.tokenizers.whitespace,
+            dupDetector: function(remoteMatch, localMatch) {
+                return remoteMatch.name === localMatch.name;
+            }
         });
+
+        engine.clearPrefetchCache();
 
         var promise = engine.initialize();
         promise
         .done(function () { console.log('Bloodhound initialized successfully!'); })
         .fail(function () { console.log('Error initializing Bloodhound!'); });
 
-        //var myView = this;
+        
         var typeahead = $(this.get('element')).typeahead(null, {
-            displayKey: 'val',
+            displayKey: 'name',
             source: engine.ttAdapter()
         });
+
+        //var myView = this;
         //typeahead.on('typeahead:selected', function (event, datum) {
         //    myView.sendAction('displayPlayer', datum.PlayerId);
         //});

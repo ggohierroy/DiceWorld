@@ -11,7 +11,7 @@ body { padding-top: 70px; }
 }
 
 /* Allows having both the input boxes next to each other */
-#expirationMonth, #expirationYear {
+#expirationMonth, #expirationYear, #inputPublishedFrom, #inputPublishedTo {
     display: inline-block;
     margin-bottom: 0;
     vertical-align: middle;
