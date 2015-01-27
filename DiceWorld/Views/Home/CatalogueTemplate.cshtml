@@ -8,12 +8,23 @@
                         {{auto-complete type="text" class="typeahead form-control" placeholder="Enter keyword" value=inputKeyword id="inputKeyword"}}
                     </div>
                     <div class="form-group">
-                        <label>Year Published (From-To)</label>
+                        <label>Year Published</label>
                         <div>
                             <label for="inputPublishedFrom" class="sr-only">Published From</label>
-                            {{input type="text" class="form-control reset-width" value=inputPublishedFrom id="inputPublishedFrom" placeholder="YYYY" size="4"}}
+                            {{input type="text" class="form-control reset-width inline-input" value=inputPublishedFrom id="inputPublishedFrom" placeholder="From" size="4"}}
                             <label for="inputPublishedTo" class="sr-only">Published To</label>
-                            {{input type="text" class="form-control reset-width" value=inputPublishedTo id="inputPublishedTo" placeholder="YYYY" size="4"}}
+                            {{input type="text" class="form-control reset-width inline-input" value=inputPublishedTo id="inputPublishedTo" placeholder="To" size="4"}}
+                            <label for="inputExactRange">Exact Range</label>
+                            {{input type="checkbox" class="form-control" checked=exactRange id="inputExactRange"}}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Player Count</label>
+                        <div>
+                            <label for="inputMinPlayerCount" class="sr-only">Min Player Count</label>
+                            {{input type="text" class="form-control reset-width inline-input" value=inputMinPlayerCount id="inputMinPlayerCount" placeholder="Min" size="4"}}
+                            <label for="inputMaxPlayerCount" class="sr-only">Max Player Count</label>
+                            {{input type="text" class="form-control reset-width inline-input" value=inputMaxPlayerCount id="inputMaxPlayerCount" placeholder="Max" size="4"}}
                         </div>
                     </div>
                     <div class="form-group">

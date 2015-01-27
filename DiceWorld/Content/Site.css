@@ -11,10 +11,10 @@ body { padding-top: 70px; }
 }
 
 /* Allows having both the input boxes next to each other */
-#expirationMonth, #expirationYear, #inputPublishedFrom, #inputPublishedTo {
-    display: inline-block;
-    margin-bottom: 0;
-    vertical-align: middle;
+.inline-input {
+    display: inline-block !important;
+    margin-bottom: 0 !important;
+    vertical-align: middle !important;
 }
 
 /* Allows adding spaces between rows */

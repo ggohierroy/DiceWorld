@@ -231,6 +231,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="DTOs\BoardGamesAutocompleteDTO.cs" />
     <Compile Include="Controllers\BoardGameStatsController.cs" />
     <Compile Include="DTOs\BoardGamesDTO.cs" />
     <Compile Include="Controllers\AccountController.cs" />

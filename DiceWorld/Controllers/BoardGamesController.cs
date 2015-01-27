@@ -29,6 +29,38 @@ namespace DiceWorld.Controllers
 
             if (parameters.PublishedFrom != null)
                 boardGames = boardGames.Where(b => b.YearPublished >= parameters.PublishedFrom);
+            if (parameters.PublishedTo != null)
+                boardGames = boardGames.Where(b => b.YearPublished <= parameters.PublishedTo);
+
+            if (parameters.ExactRange)
+            {
+                if (parameters.MaxPlayers != null)
+                    boardGames = boardGames.Where(b => b.MaxPlayers == parameters.MaxPlayers);
+                if (parameters.MinPlayers != null)
+                    boardGames = boardGames.Where(b => b.MinPlayers == parameters.MinPlayers);
+            }
+            else
+            {
+                if (parameters.MaxPlayers != null)
+                    boardGames = boardGames.Where(b => b.MaxPlayers >= parameters.MaxPlayers);
+                if (parameters.MinPlayers != null)
+                    boardGames = boardGames.Where(b => b.MinPlayers <= parameters.MinPlayers);
+            }
+
+            if (parameters.MaxPlayingTime != null)
+                boardGames = boardGames.Where(b => b.PlayingTime <= parameters.MaxPlayingTime);
+            if (parameters.MinPlayingTime != null)
+                boardGames = boardGames.Where(b => b.PlayingTime >= parameters.MinPlayingTime);
+
+            if (parameters.MinWeight != null)
+                boardGames = boardGames.Where(b => b.BoardGameStats.AverageWeight >= parameters.MinWeight);
+            if (parameters.MaxWeight != null)
+                boardGames = boardGames.Where(b => b.BoardGameStats.AverageWeight <= parameters.MaxWeight);
+
+            if (parameters.MinBayesRating != null)
+                boardGames = boardGames.Where(b => b.BoardGameStats.BayesianRating >= parameters.MinBayesRating);
+            if (parameters.MaxBayesRating != null)
+                boardGames = boardGames.Where(b => b.BoardGameStats.BayesianRating <= parameters.MaxBayesRating);
 
             var page = (int) (parameters.Page ?? 1);
             var itemsPerPage = (int) (parameters.ItemsPerPage ?? 24);
@@ -150,11 +182,5 @@ namespace DiceWorld.Controllers
         {
             return db.BoardGames.Count(e => e.Id == id) > 0;
         }
-    }
-
-    public class BoardGamesAutocompleteDTO
-    {
-        public int Id { get; set; }
-        public string Name { get; set; }
     }
 }

@@ -30,11 +30,6 @@ namespace DiceWorld.DTOs
         public bool ExactRange { get; set; }
 
         /// <summary>
-        /// Include or exclude statistics
-        /// </summary>
-        public bool Stats { get; set; }
-
-        /// <summary>
         /// Min and max playing time
         /// </summary>
         public int? MaxPlayingTime { get; set; }

@@ -1,14 +1,16 @@
 ﻿App.CatalogueController = Ember.ArrayController.extend({
 
-    queryParams: ['page', 'itemsPerPage', 'keyword', 'publishedFrom'],
+    queryParams: ['page', 'itemsPerPage', 'keyword', 'publishedFrom', 'publishedTo'],
     page: 1,
     itemsPerPage: 24,
     keyword: "",
     publishedFrom: "",
+    publishedTo: "",
 
     inputPage: 1,
     inputKeyword: "",
     inputPublishedFrom: "",
+    inputPublishedTo: "",
 
     totalPages: function() {
         var totalItems = this.get('model.meta.total');
@@ -34,7 +36,8 @@
         search: function () {
             this.setProperties({
                 keyword: this.get('inputKeyword'),
-                publishedFrom: this.get('inputPublishedFrom')
+                publishedFrom: this.get('inputPublishedFrom'),
+                publishedTo: this.get('inputPublishedTo')
             });
         }
     }

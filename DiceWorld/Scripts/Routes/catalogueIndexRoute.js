@@ -3,7 +3,8 @@
         page: { refreshModel: true },
         itemsPerPage: { refreshModel: true },
         keyword: { refreshModel: true },
-        publishedFrom: { refreshModel: true }
+        publishedFrom: { refreshModel: true },
+        publishedTo: { refreshModel: true }
     },
     model: function(params) {
         // This gets called upon entering 'articles' route
@@ -18,6 +19,7 @@
         controller.set('inputPage', controller.get('page'));
         controller.set('inputKeyword', controller.get('keyword'));
         controller.set('inputPublishedFrom', controller.get('publishedFrom'));
+        controller.set('inputPublishedTo', controller.get('publishedTo'));
         controller.set('model', model);
     }
 });
