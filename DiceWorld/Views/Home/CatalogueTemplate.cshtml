@@ -14,28 +14,25 @@
                             {{input type="text" class="form-control reset-width inline-input" value=inputPublishedFrom id="inputPublishedFrom" placeholder="From" size="4"}}
                             <label for="inputPublishedTo" class="sr-only">Published To</label>
                             {{input type="text" class="form-control reset-width inline-input" value=inputPublishedTo id="inputPublishedTo" placeholder="To" size="4"}}
-                            <label for="inputExactRange">Exact Range</label>
-                            {{input type="checkbox" class="form-control" checked=exactRange id="inputExactRange"}}
                         </div>
                     </div>
                     <div class="form-group">
                         <label>Player Count</label>
                         <div>
                             <label for="inputMinPlayerCount" class="sr-only">Min Player Count</label>
-                            {{input type="text" class="form-control reset-width inline-input" value=inputMinPlayerCount id="inputMinPlayerCount" placeholder="Min" size="4"}}
+                            {{input type="text" class="form-control reset-width inline-input" value=inputPlayerCountMin id="inputMinPlayerCount" placeholder="Min" size="4"}}
                             <label for="inputMaxPlayerCount" class="sr-only">Max Player Count</label>
-                            {{input type="text" class="form-control reset-width inline-input" value=inputMaxPlayerCount id="inputMaxPlayerCount" placeholder="Max" size="4"}}
+                            {{input type="text" class="form-control reset-width inline-input" value=inputPlayerCountMax id="inputMaxPlayerCount" placeholder="Max" size="4"}}
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputFile">File input</label>
-                        <input type="file" id="exampleInputFile">
-                        <p class="help-block">Example block-level help text here.</p>
-                    </div>
-                    <div class="checkbox">
-                        <label>
-                            <input type="checkbox"> Check me out
-                        </label>
+                        <label>Playing Time (min.)</label>
+                        <div>
+                            <label for="inputPlayingTimeMin" class="sr-only">Published From</label>
+                            {{input type="text" class="form-control reset-width inline-input" value=inputPublishedFrom id="inputPlayingTimeMin" placeholder="Min" size="4"}}
+                            <label for="inputPlayingTimeMax" class="sr-only">Published To</label>
+                            {{input type="text" class="form-control reset-width inline-input" value=inputPublishedTo id="inputPlayingTimeMax" placeholder="Max" size="4"}}
+                        </div>
                     </div>
                     <button {{action 'search'}} class="btn btn-default">Search</button>
                 </form>

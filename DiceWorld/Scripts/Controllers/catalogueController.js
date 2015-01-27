@@ -1,16 +1,22 @@
 ﻿App.CatalogueController = Ember.ArrayController.extend({
 
-    queryParams: ['page', 'itemsPerPage', 'keyword', 'publishedFrom', 'publishedTo'],
+    queryParams: ['page', 'itemsPerPage', 'keyword', 'publishedFrom', 'publishedTo', 'exactRange', 'minPlayers', 'maxPlayers'],
     page: 1,
     itemsPerPage: 24,
     keyword: "",
     publishedFrom: "",
     publishedTo: "",
+    exactRange: false,
+    minPlayers: "",
+    maxPlayers: "",
 
     inputPage: 1,
     inputKeyword: "",
     inputPublishedFrom: "",
     inputPublishedTo: "",
+    inputExactRange: false,
+    inputPlayerCountMin: "",
+    inputPlayerCountMax: "",
 
     totalPages: function() {
         var totalItems = this.get('model.meta.total');
@@ -37,7 +43,10 @@
             this.setProperties({
                 keyword: this.get('inputKeyword'),
                 publishedFrom: this.get('inputPublishedFrom'),
-                publishedTo: this.get('inputPublishedTo')
+                publishedTo: this.get('inputPublishedTo'),
+                exactRange: this.get('inputExactRange'),
+                minPlayers: this.get('inputPlayerCountMin'),
+                maxPlayers: this.get('inputPlayerCountMax')
             });
         }
     }

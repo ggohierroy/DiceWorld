@@ -4,7 +4,10 @@
         itemsPerPage: { refreshModel: true },
         keyword: { refreshModel: true },
         publishedFrom: { refreshModel: true },
-        publishedTo: { refreshModel: true }
+        publishedTo: { refreshModel: true },
+        exactRange: { refreshModel: true },
+        minPlayers: { refreshModel: true },
+        maxPlayers: { refreshModel: true }
     },
     model: function(params) {
         // This gets called upon entering 'articles' route
@@ -20,6 +23,9 @@
         controller.set('inputKeyword', controller.get('keyword'));
         controller.set('inputPublishedFrom', controller.get('publishedFrom'));
         controller.set('inputPublishedTo', controller.get('publishedTo'));
+        controller.set('inputExactRange', controller.get('exactRange'));
+        controller.set('inputPlayerCountMin', controller.get('minPlayers'));
+        controller.set('inputPlayerCountMax', controller.get('maxPlayers'));
         controller.set('model', model);
     }
 });
