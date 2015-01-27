@@ -20,12 +20,18 @@ namespace DiceWorld.Controllers
         private DatabaseContext db = new DatabaseContext();
 
         [Route("boardgames")]
-        public BoardGamesDTO GetBoardGames(int page = 1, int itemsPerPage = 24, string keyword = null)
+        public BoardGamesDTO GetBoardGames([FromUri] BoardGameSearchParameters parameters)
         {
             var boardGames = db.BoardGames.AsQueryable();
 
-            if (!string.IsNullOrEmpty(keyword))
-                boardGames = boardGames.Where(b => b.Name.ToLower().Contains(keyword.ToLower()));
+            if (!string.IsNullOrEmpty(parameters.Keyword))
+                boardGames = boardGames.Where(b => b.Name.ToLower().Contains(parameters.Keyword.ToLower()));
+
+            if (parameters.PublishedFrom != null)
+                boardGames = boardGames.Where(b => b.YearPublished >= parameters.PublishedFrom);
+
+            var page = (int) (parameters.Page ?? 1);
+            var itemsPerPage = (int) (parameters.ItemsPerPage ?? 24);
 
             return new BoardGamesDTO
             {

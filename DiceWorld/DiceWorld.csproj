@@ -238,6 +238,7 @@
     <Compile Include="Controllers\ChargesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="DTOs\BoardGameSearchParameters.cs" />
     <Compile Include="DTOs\Meta.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

@@ -1,9 +1,10 @@
 ﻿App.CatalogueController = Ember.ArrayController.extend({
 
-    queryParams: ['page', 'itemsPerPage', 'keyword'],
+    queryParams: ['page', 'itemsPerPage', 'keyword', 'publishedFrom'],
     page: 1,
     itemsPerPage: 24,
     keyword: "",
+    publishedFrom: "",
 
     inputPage: 1,
     inputKeyword: "",
@@ -30,8 +31,11 @@
         fastBackward: function() {
             this.set('page', 1);
         },
-        search: function() {
-            this.setProperties({ keyword: this.get('inputKeyword') });
+        search: function () {
+            this.setProperties({
+                keyword: this.get('inputKeyword'),
+                publishedFrom: this.get('inputPublishedFrom')
+            });
         }
     }
     
