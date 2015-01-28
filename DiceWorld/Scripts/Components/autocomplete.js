@@ -1,8 +1,15 @@
 ﻿App.AutoCompleteComponent = Ember.TextField.extend({
+
+    attributeBindings: ['resource-name'],
+
+
     didInsertElement: function () {
+
+        var resourceName = this.get('resource-name');
+
         var engine = new Bloodhound({
-            prefetch: "/Content/boardGames.json",
-            remote: 'api/boardgamesForAutocomplete?keyword=%QUERY',
+            prefetch: "/Content/" + resourceName + ".json",
+            remote: "api/" + resourceName + "ForAutocomplete?keyword=%QUERY",
             datumTokenizer: function (d) {
                 return Bloodhound.tokenizers.whitespace(d.name);
             },

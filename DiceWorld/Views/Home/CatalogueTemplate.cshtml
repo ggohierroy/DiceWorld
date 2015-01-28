@@ -5,7 +5,7 @@
                 <form>
                     <div class="form-group">
                         <label for="inputKeyword">Keyword</label>
-                        {{auto-complete type="text" class="typeahead form-control" placeholder="Enter keyword" value=inputKeyword id="inputKeyword"}}
+                        {{auto-complete type="text" class="typeahead form-control" placeholder="Enter Keyword" value=inputKeyword id="inputKeyword" resource-name="boardGames"}}
                     </div>
                     <div class="form-group">
                         <label>Year Published</label>
@@ -26,13 +26,17 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label>Playing Time (min.)</label>
+                        <label>Playing Time (Minutes)</label>
                         <div>
                             <label for="inputPlayingTimeMin" class="sr-only">Published From</label>
                             {{input type="text" class="form-control reset-width inline-input" value=inputPublishedFrom id="inputPlayingTimeMin" placeholder="Min" size="4"}}
                             <label for="inputPlayingTimeMax" class="sr-only">Published To</label>
                             {{input type="text" class="form-control reset-width inline-input" value=inputPublishedTo id="inputPlayingTimeMax" placeholder="Max" size="4"}}
                         </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="tags">Tags</label>
+                        {{auto-complete type="text" class="typeahead form-control" placeholder="Enter Tag" value=inputTag id="tags" resource-name="tagDefinitions"}}
                     </div>
                     <button {{action 'search'}} class="btn btn-default">Search</button>
                 </form>
