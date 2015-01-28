@@ -38,9 +38,10 @@
                         <label for="tags">Tags</label>
                         {{auto-complete type="text" class="typeahead form-control" placeholder="Enter Tag" value=inputTag id="tags" resource-name="tagDefinitions" selected="addTag" autocompleted="addTag"}}
                     </div>
-                    <ul>
+                    <ul class="list-group">
                         {{#each inputTag in inputTags}}
-                        <li>
+                        <li class="list-group-item">
+                            <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                             {{inputTag.name}}
                         </li>
                         {{/each}}
