@@ -17,6 +17,7 @@
     inputExactRange: false,
     inputPlayerCountMin: "",
     inputPlayerCountMax: "",
+    inputTags: [],
 
     totalPages: function() {
         var totalItems = this.get('model.meta.total');
@@ -39,6 +40,9 @@
         fastBackward: function() {
             this.set('page', 1);
         },
+        addTag: function (datum) {
+            this.get('inputTags').pushObject(datum);
+        },
         search: function () {
             this.setProperties({
                 keyword: this.get('inputKeyword'),
@@ -48,7 +52,7 @@
                 minPlayers: this.get('inputPlayerCountMin'),
                 maxPlayers: this.get('inputPlayerCountMax')
             });
-        }
+        },
     }
     
 });

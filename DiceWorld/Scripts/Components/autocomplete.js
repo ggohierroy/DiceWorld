@@ -32,12 +32,12 @@
             source: engine.ttAdapter()
         });
 
-        //var myView = this;
-        //typeahead.on('typeahead:selected', function (event, datum) {
-        //    myView.sendAction('displayPlayer', datum.PlayerId);
-        //});
-        //typeahead.on('typeahead:autocompleted', function (event, datum) {
-        //    myView.sendAction('displayPlayer', datum.PlayerId);
-        //});
+        var that = this;
+        typeahead.on('typeahead:selected', function (event, datum) {
+            that.sendAction('selected', datum);
+        });
+        typeahead.on('typeahead:autocompleted', function (event, datum) {
+            that.sendAction('autocompleted', datum);
+        });
     }
 });
