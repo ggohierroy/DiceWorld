@@ -17,6 +17,7 @@
     inputExactRange: false,
     inputPlayerCountMin: "",
     inputPlayerCountMax: "",
+    tagDefinitions: null,
     inputTags: [],
     inputTag: "",
 
@@ -41,8 +42,9 @@
         fastBackward: function() {
             this.set('page', 1);
         },
-        addTag: function (datum) {
-            this.get('inputTags').pushObject(datum);
+        addTag: function (tagDefinition) {
+            if(!this.get('inputTags').contains(tagDefinition))
+                this.get('inputTags').pushObject(tagDefinition);
         },
         search: function () {
             this.setProperties({
@@ -54,6 +56,9 @@
                 maxPlayers: this.get('inputPlayerCountMax')
             });
         },
+        removeTag: function(tagDefinition) {
+            this.get('inputTags').removeObject(tagDefinition);
+        }
     }
     
 });

@@ -20,9 +20,11 @@ namespace DiceWorld.Controllers
         private DatabaseContext db = new DatabaseContext();
 
         // GET: api/TagDefinitions
-        public IQueryable<TagDefinition> GetTagDefinitions()
+        [Route("tagDefinitions")]
+        public TagDefinitionsDTO GetTagDefinitions()
         {
-            return db.TagDefinitions;
+            var tagDefinitions = db.TagDefinitions.OrderByDescending(t => t.Occurences);
+            return new TagDefinitionsDTO {Meta = new Meta {Total = tagDefinitions.Count()}, TagDefinitions = tagDefinitions};
         }
 
         // GET: api/TagDefinitions/5

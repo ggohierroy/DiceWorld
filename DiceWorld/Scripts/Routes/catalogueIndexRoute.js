@@ -27,5 +27,6 @@
         controller.set('inputPlayerCountMin', controller.get('minPlayers'));
         controller.set('inputPlayerCountMax', controller.get('maxPlayers'));
         controller.set('model', model);
+        controller.set('tagDefinitions', this.store.find('tagDefinition'));
     }
 });

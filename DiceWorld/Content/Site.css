@@ -29,6 +29,13 @@ body { padding-top: 70px; }
     float: none;
 }
 
+/* Makes dropdowns scrollable */
+.scrollable-menu {
+    height: auto;
+    max-height: 200px;
+    overflow-x: hidden;
+}
+
 /*  Tablet  */
 @media (min-width:767px){
 

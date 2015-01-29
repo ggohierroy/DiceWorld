@@ -35,13 +35,23 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="tags">Tags</label>
-                        {{auto-complete type="text" class="typeahead form-control" placeholder="Enter Tag" value=inputTag id="tags" resource-name="tagDefinitions" selected="addTag" autocompleted="addTag" size="10"}}
+                        <label>Tags</label>
+                        <div class="dropdown">
+                            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+                                Select Tags
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu scrollable-menu" role="menu" aria-labelledby="dropdownMenu1">
+                                {{#each tagDefinition in tagDefinitions}}
+                                <li role="presentation"><a {{action 'addTag' tagDefinition}} role="menuitem" tabindex="-1">{{tagDefinition.name}}</a></li>
+                                {{/each}}
+                            </ul>
+                        </div>
                     </div>
                     <ul class="list-group">
                         {{#each inputTag in inputTags}}
                         <li class="list-group-item">
-                            <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <button {{action 'removeTag' inputTag}}  type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                             {{inputTag.name}}
                         </li>
                         {{/each}}

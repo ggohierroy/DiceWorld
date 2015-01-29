@@ -232,6 +232,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\TagDefinitionsController.cs" />
+    <Compile Include="DTOs\TagDefinitionsDTO.cs" />
     <Compile Include="DTOs\TagDefinitionsAutocompleteDTO.cs" />
     <Compile Include="DTOs\BoardGamesAutocompleteDTO.cs" />
     <Compile Include="Controllers\BoardGameStatsController.cs" />
@@ -922,6 +923,7 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\Models\tagDefinition.js" />
     <Content Include="Scripts\Models\boardGame.js" />
     <Content Include="Scripts\Models\boardGameStat.js" />
     <Content Include="Scripts\Models\tag.js" />
