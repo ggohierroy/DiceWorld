@@ -895,6 +895,7 @@
     <Content Include="Content\tagDefinitions.json" />
     <None Include="Properties\PublishProfiles\diceworld.pubxml" />
     <Content Include="Scripts\Components\autocomplete.js" />
+    <Content Include="Scripts\Controllers\applicationController.js" />
     <Content Include="Scripts\ember-data.js.map" />
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />

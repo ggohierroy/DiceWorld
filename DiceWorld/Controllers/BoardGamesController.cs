@@ -62,6 +62,9 @@ namespace DiceWorld.Controllers
             if (parameters.MaxBayesRating != null)
                 boardGames = boardGames.Where(b => b.BoardGameStats.BayesianRating <= parameters.MaxBayesRating);
 
+            if (parameters.IncludeTags != null)
+                boardGames = boardGames.Where(b => parameters.IncludeTags.All(i => b.Tags.Select(c => c.TagDefinitionId).Contains(i)));
+
             var page = (int) (parameters.Page ?? 1);
             var itemsPerPage = (int) (parameters.ItemsPerPage ?? 24);
 

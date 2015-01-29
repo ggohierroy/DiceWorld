@@ -8,6 +8,15 @@
                         {{auto-complete type="text" class="typeahead form-control" placeholder="Enter Keyword" value=inputKeyword id="inputKeyword" resource-name="boardGames"}}
                     </div>
                     <div class="form-group">
+                        <label>Price</label>
+                        <div>
+                            <label for="inputPriceMin" class="sr-only">Price Min</label>
+                            {{input type="text" class="form-control reset-width inline-input" value=inputPriceMin id="inputPriceMin" placeholder="Min" size="4"}}
+                            <label for="inputPriceMax" class="sr-only">Price Max</label>
+                            {{input type="text" class="form-control reset-width inline-input" value=inputPriceMax id="inputPriceMax" placeholder="Max" size="4"}}
+                        </div>
+                    </div>
+                    <div class="form-group">
                         <label>Year Published</label>
                         <div>
                             <label for="inputPublishedFrom" class="sr-only">Published From</label>
@@ -29,9 +38,27 @@
                         <label>Playing Time (Minutes)</label>
                         <div>
                             <label for="inputPlayingTimeMin" class="sr-only">Published From</label>
-                            {{input type="text" class="form-control reset-width inline-input" value=inputPublishedFrom id="inputPlayingTimeMin" placeholder="Min" size="4"}}
+                            {{input type="text" class="form-control reset-width inline-input" value=inputPlayingTimeMin id="inputPlayingTimeMin" placeholder="Min" size="4"}}
                             <label for="inputPlayingTimeMax" class="sr-only">Published To</label>
-                            {{input type="text" class="form-control reset-width inline-input" value=inputPublishedTo id="inputPlayingTimeMax" placeholder="Max" size="4"}}
+                            {{input type="text" class="form-control reset-width inline-input" value=inputPlayingTimeMax id="inputPlayingTimeMax" placeholder="Max" size="4"}}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Game Weight (1-5)</label>
+                        <div>
+                            <label for="inputWeightMin" class="sr-only">Min Weight</label>
+                            {{input type="text" class="form-control reset-width inline-input" value=inputWeightMin id="inputWeightMin" placeholder="Min" size="4"}}
+                            <label for="inputWeightMax" class="sr-only">Max Weigth</label>
+                            {{input type="text" class="form-control reset-width inline-input" value=inputWeightMax id="inputWeightMax" placeholder="Max" size="4"}}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Rating (1-10)</label>
+                        <div>
+                            <label for="inputRatingMin" class="sr-only">Min Rating</label>
+                            {{input type="text" class="form-control reset-width inline-input" value=inputRatingMin id="inputRatingMin" placeholder="Min" size="4"}}
+                            <label for="inputRatingMax" class="sr-only">Max Rating</label>
+                            {{input type="text" class="form-control reset-width inline-input" value=inputRatingMax id="inputRatingMax" placeholder="Max" size="4"}}
                         </div>
                     </div>
                     <div class="form-group">

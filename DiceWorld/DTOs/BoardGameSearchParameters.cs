@@ -44,8 +44,8 @@ namespace DiceWorld.DTOs
         /// <summary>
         /// Mechanic ids to include or exclude from the search
         /// </summary>
-        public int[] IncludeTag { get; set; }
-        public int[] ExcludeTag { get; set; }
+        public int[] IncludeTags { get; set; }
+        public int[] ExcludeTags { get; set; }
 
         /// <summary>
         /// Average range

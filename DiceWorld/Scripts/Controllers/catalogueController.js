@@ -1,6 +1,5 @@
 ﻿App.CatalogueController = Ember.ArrayController.extend({
-
-    queryParams: ['page', 'itemsPerPage', 'keyword', 'publishedFrom', 'publishedTo', 'exactRange', 'minPlayers', 'maxPlayers'],
+    queryParams: ['page', 'itemsPerPage', 'keyword', 'publishedFrom', 'publishedTo', 'exactRange', 'minPlayers', 'maxPlayers', 'includeTags'],
     page: 1,
     itemsPerPage: 24,
     keyword: "",
@@ -9,6 +8,7 @@
     exactRange: false,
     minPlayers: "",
     maxPlayers: "",
+    includeTags: [],
 
     inputPage: 1,
     inputKeyword: "",
@@ -19,7 +19,6 @@
     inputPlayerCountMax: "",
     tagDefinitions: null,
     inputTags: [],
-    inputTag: "",
 
     totalPages: function() {
         var totalItems = this.get('model.meta.total');
@@ -47,14 +46,25 @@
                 this.get('inputTags').pushObject(tagDefinition);
         },
         search: function () {
+            var ids = this.get('inputTags').map(function(item) {
+                return parseInt(item.id);
+            });
+            var includeTags = this.get('includeTags');
+            debugger;
+
+
             this.setProperties({
                 keyword: this.get('inputKeyword'),
                 publishedFrom: this.get('inputPublishedFrom'),
                 publishedTo: this.get('inputPublishedTo'),
                 exactRange: this.get('inputExactRange'),
                 minPlayers: this.get('inputPlayerCountMin'),
-                maxPlayers: this.get('inputPlayerCountMax')
+                maxPlayers: this.get('inputPlayerCountMax'),
+                includeTags: this.get('inputTags').mapBy('id')
             });
+
+            includeTags = this.get('includeTags');
+            debugger;
         },
         removeTag: function(tagDefinition) {
             this.get('inputTags').removeObject(tagDefinition);
