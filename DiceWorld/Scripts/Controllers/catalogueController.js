@@ -18,6 +18,7 @@
     inputPlayerCountMin: "",
     inputPlayerCountMax: "",
     inputTags: [],
+    inputTag: "",
 
     totalPages: function() {
         var totalItems = this.get('model.meta.total');

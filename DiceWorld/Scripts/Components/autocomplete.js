@@ -2,7 +2,6 @@
 
     attributeBindings: ['resource-name'],
 
-
     didInsertElement: function () {
 
         var resourceName = this.get('resource-name');
@@ -22,10 +21,8 @@
         engine.clearPrefetchCache();
 
         var promise = engine.initialize();
-        promise
-        .done(function () { console.log('Bloodhound initialized successfully!'); })
-        .fail(function () { console.log('Error initializing Bloodhound!'); });
-
+        promise.done(function () { console.log('Bloodhound initialized successfully!'); })
+            .fail(function () { console.log('Error initializing Bloodhound!'); });
         
         var typeahead = $(this.get('element')).typeahead(null, {
             displayKey: 'name',
