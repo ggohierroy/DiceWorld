@@ -1,15 +1,20 @@
 ﻿App.CatalogueController = Ember.ArrayController.extend({
     queryParams: ['page', 'itemsPerPage', 'keyword', 'publishedFrom', 'publishedTo', 'exactRange', 'minPlayers', 'maxPlayers', 'includeTags'],
-    page: 1,
     itemsPerPage: 24,
+    page: 1,
     keyword: "",
     publishedFrom: "",
     publishedTo: "",
     exactRange: false,
     minPlayers: "",
     maxPlayers: "",
-    includeTags: [],
+    includeTags: [], // array of ids
 
+    // Contains all the tag defnitions loaded from the server
+    // This is a DS.PromiseArray that fulfills to a DS.RecordArray
+    tagDefinitions: null,
+
+    // Inputs for the search form
     inputPage: 1,
     inputKeyword: "",
     inputPublishedFrom: "",
@@ -17,13 +22,30 @@
     inputExactRange: false,
     inputPlayerCountMin: "",
     inputPlayerCountMax: "",
-    tagDefinitions: null,
-    inputTags: [],
+    inputTags: [], // array of tag definition object
 
     totalPages: function() {
         var totalItems = this.get('model.meta.total');
         return Math.floor(totalItems / this.get('itemsPerPage')) + 1;
     }.property('model.meta.total'),
+
+    // Observing when the tag definitions get loaded from the server
+    setInputTags: function () {
+        if (!this.get('tagDefinitions.isFulfilled'))
+            return;
+        
+        var includeTags = this.get('includeTags');
+        var tagDefinitions = this.get('tagDefinitions').filter(function(item) {
+            return includeTags.contains(item.id);
+        });
+
+        tagDefinitions.forEach(function (item) { this.addTag(item); }, this);
+    }.observes('tagDefinitions.isFulfilled'),
+
+    addTag: function(tagDefinition) {
+        if (!this.get('inputTags').contains(tagDefinition))
+            this.get('inputTags').pushObject(tagDefinition);
+    },
 
     actions: {
         updatePage: function() {
@@ -41,18 +63,10 @@
         fastBackward: function() {
             this.set('page', 1);
         },
-        addTag: function (tagDefinition) {
-            if(!this.get('inputTags').contains(tagDefinition))
-                this.get('inputTags').pushObject(tagDefinition);
+        tagSelected: function (tagDefinition) {
+            this.addTag(tagDefinition);
         },
         search: function () {
-            var ids = this.get('inputTags').map(function(item) {
-                return parseInt(item.id);
-            });
-            var includeTags = this.get('includeTags');
-            debugger;
-
-
             this.setProperties({
                 keyword: this.get('inputKeyword'),
                 publishedFrom: this.get('inputPublishedFrom'),
@@ -62,9 +76,6 @@
                 maxPlayers: this.get('inputPlayerCountMax'),
                 includeTags: this.get('inputTags').mapBy('id')
             });
-
-            includeTags = this.get('includeTags');
-            debugger;
         },
         removeTag: function(tagDefinition) {
             this.get('inputTags').removeObject(tagDefinition);

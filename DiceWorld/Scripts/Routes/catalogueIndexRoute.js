@@ -7,15 +7,10 @@
         publishedTo: { refreshModel: true },
         exactRange: { refreshModel: true },
         minPlayers: { refreshModel: true },
-        maxPlayers: { refreshModel: true }
+        maxPlayers: { refreshModel: true },
+        includeTags: { refreshModel: true }
     },
-    model: function(params) {
-        // This gets called upon entering 'articles' route
-        // for the first time, and we opt into refiring it upon
-        // query param changes by setting `refreshModel:true` above.
-
-        // params has format of { category: "someValueOrJustNull" },
-        // which we can just forward to the server.
+    model: function (params) {
         return this.store.find('boardGame', params);
     },
     setupController: function(controller, model) {

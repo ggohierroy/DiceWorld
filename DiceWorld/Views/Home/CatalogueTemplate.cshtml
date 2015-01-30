@@ -70,7 +70,7 @@
                             </button>
                             <ul class="dropdown-menu scrollable-menu" role="menu" aria-labelledby="dropdownMenu1">
                                 {{#each tagDefinition in tagDefinitions}}
-                                <li role="presentation"><a {{action 'addTag' tagDefinition}} role="menuitem" tabindex="-1">{{tagDefinition.name}}</a></li>
+                                <li role="presentation"><a {{action 'tagSelected' tagDefinition}} role="menuitem" tabindex="-1">{{tagDefinition.name}}</a></li>
                                 {{/each}}
                             </ul>
                         </div>
