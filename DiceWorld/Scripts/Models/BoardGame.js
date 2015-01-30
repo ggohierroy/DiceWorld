@@ -12,6 +12,6 @@
     imageId: DS.attr('number'),
     price: DS.attr('number'),
     imageUrl: function() {
-        return '/Content/Images/Thumbnails/pic' + this.get('imageId') + '_t.jpg';
+        return '/Content/Images/Processed/pic' + this.get('imageId') + '.jpg';
     }.property('imageId')
 });
