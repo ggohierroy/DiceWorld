@@ -83,7 +83,8 @@
                         </li>
                         {{/each}}
                     </ul>
-                    <button {{action 'search'}} class="btn btn-default">Search</button>
+                    <button {{action 'search'}} class="btn btn-primary">Search</button>
+                    <button {{action 'clear'}} class="btn btn-default">Clear</button>
                 </form>
             </div>
             <div class="col-sm-9">
@@ -108,7 +109,7 @@
                             <img {{bind-attr src=boardGame.imageUrl}} alt="...">
                             <div class="caption">
                                 <h4>{{boardGame.name}}</h4>
-                                <p><a href="#" class="btn btn-primary" role="button">More</a> <a href="#" class="btn btn-default pull-right" role="button">34.95$ <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a></p>
+                                <p><a href="#" class="btn btn-primary" role="button">More</a> <a href="#" class="btn btn-default pull-right" role="button">{{boardGame.price}}$ <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a></p>
                             </div>
                         </div>
                     </div>

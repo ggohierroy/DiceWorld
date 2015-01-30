@@ -41,6 +41,8 @@ namespace DiceWorld.Models
 
         public BoardGameStats BoardGameStats { get; set; }
 
+        public decimal Price { get; set; }
+
         public int ImageId { get; set; }
     }
 }

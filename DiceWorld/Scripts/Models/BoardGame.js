@@ -10,6 +10,7 @@
     tags: DS.hasMany('tag'),
     boardGameStats: DS.belongsTo('boardGameStat'),
     imageId: DS.attr('number'),
+    price: DS.attr('number'),
     imageUrl: function() {
         return '/Content/Images/Thumbnails/pic' + this.get('imageId') + '_t.jpg';
     }.property('imageId')

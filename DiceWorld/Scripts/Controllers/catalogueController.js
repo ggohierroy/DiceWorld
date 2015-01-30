@@ -1,5 +1,24 @@
 ﻿App.CatalogueController = Ember.ArrayController.extend({
-    queryParams: ['page', 'itemsPerPage', 'keyword', 'publishedFrom', 'publishedTo', 'exactRange', 'minPlayers', 'maxPlayers', 'includeTags'],
+    queryParams: [
+        'page',
+        'itemsPerPage',
+        'keyword',
+        'publishedFrom',
+        'publishedTo',
+        'exactRange',
+        'minPlayers',
+        'maxPlayers',
+        'includeTags',
+        'minPrice',
+        'maxPrice',
+        'minPlayingTime',
+        'maxPlayingTime',
+        'minWeight',
+        'maxWeight',
+        'minRating',
+        'maxRating'
+    ],
+
     itemsPerPage: 24,
     page: 1,
     keyword: "",
@@ -8,6 +27,14 @@
     exactRange: false,
     minPlayers: "",
     maxPlayers: "",
+    minPrice: "",
+    maxPrice: "",
+    minPlayingTime: "",
+    maxPlayingTime: "",
+    minWeight: "",
+    maxWeight: "",
+    minRating: "",
+    maxRating: "",
     includeTags: [], // array of ids
 
     // Contains all the tag defnitions loaded from the server
@@ -22,6 +49,14 @@
     inputExactRange: false,
     inputPlayerCountMin: "",
     inputPlayerCountMax: "",
+    inputPlayingTimeMin: "",
+    inputPlayingTimeMax: "",
+    inputWeightMin: "",
+    inputWeightMax: "",
+    inputRatingMin: "",
+    inputRatingMax: "",
+    inputPriceMin: "",
+    inputPriceMax: "",
     inputTags: [], // array of tag definition object
 
     totalPages: function() {
@@ -74,7 +109,34 @@
                 exactRange: this.get('inputExactRange'),
                 minPlayers: this.get('inputPlayerCountMin'),
                 maxPlayers: this.get('inputPlayerCountMax'),
+                minPrice: this.get('inputPriceMin'),
+                maxPrice: this.get('inputPriceMax'),
+                minPlayingTime: this.get('inputPlayingTimeMin'),
+                maxPlayingTime: this.get('inputPlayingTimeMax'),
+                minWeight: this.get('inputWeightMin'),
+                maxWeight: this.get('inputWeightMax'),
+                minRating: this.get('inputRatingMin'),
+                maxRating: this.get('inputRatingMax'),
                 includeTags: this.get('inputTags').mapBy('id')
+            });
+        },
+        clear: function() {
+            this.setProperties({
+                inputKeyword: "",
+                inputPublishedFrom: "",
+                inputPublishedTo: "",
+                inputExactRange: false,
+                inputPlayerCountMin: "",
+                inputPlayerCountMax: "",
+                inputPlayingTimeMin: "",
+                inputPlayingTimeMax: "",
+                inputWeightMin: "",
+                inputWeightMax: "",
+                inputRatingMin: "",
+                inputRatingMax: "",
+                inputPriceMin: "",
+                inputPriceMax: "",
+                inputTags: []
             });
         },
         removeTag: function(tagDefinition) {

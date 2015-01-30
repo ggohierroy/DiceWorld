@@ -47,6 +47,11 @@ namespace DiceWorld.Controllers
                     boardGames = boardGames.Where(b => b.MinPlayers <= parameters.MinPlayers);
             }
 
+            if (parameters.MaxPrice != null)
+                boardGames = boardGames.Where(b => b.Price <= parameters.MaxPrice);
+            if (parameters.MinPrice != null)
+                boardGames = boardGames.Where(b => b.Price >= parameters.MinPrice);
+
             if (parameters.MaxPlayingTime != null)
                 boardGames = boardGames.Where(b => b.PlayingTime <= parameters.MaxPlayingTime);
             if (parameters.MinPlayingTime != null)
@@ -57,10 +62,10 @@ namespace DiceWorld.Controllers
             if (parameters.MaxWeight != null)
                 boardGames = boardGames.Where(b => b.BoardGameStats.AverageWeight <= parameters.MaxWeight);
 
-            if (parameters.MinBayesRating != null)
-                boardGames = boardGames.Where(b => b.BoardGameStats.BayesianRating >= parameters.MinBayesRating);
-            if (parameters.MaxBayesRating != null)
-                boardGames = boardGames.Where(b => b.BoardGameStats.BayesianRating <= parameters.MaxBayesRating);
+            if (parameters.MinRating != null)
+                boardGames = boardGames.Where(b => b.BoardGameStats.BayesianRating >= parameters.MinRating);
+            if (parameters.MaxRating != null)
+                boardGames = boardGames.Where(b => b.BoardGameStats.BayesianRating <= parameters.MaxRating);
 
             if (parameters.IncludeTags != null)
                 boardGames = boardGames.Where(b => parameters.IncludeTags.All(i => b.Tags.Select(c => c.TagDefinitionId).Contains(i)));

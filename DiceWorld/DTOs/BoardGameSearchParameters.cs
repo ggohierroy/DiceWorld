@@ -56,8 +56,14 @@ namespace DiceWorld.DTOs
         /// <summary>
         /// Bayes average range
         /// </summary>
-        public double? MinBayesRating { get; set; }
-        public double? MaxBayesRating { get; set; }
+        public double? MinRating { get; set; }
+        public double? MaxRating { get; set; }
+
+        /// <summary>
+        /// Price range
+        /// </summary>
+        public decimal? MinPrice { get; set; }
+        public decimal? MaxPrice { get; set; }
 
         /// <summary>
         /// Average weight range
