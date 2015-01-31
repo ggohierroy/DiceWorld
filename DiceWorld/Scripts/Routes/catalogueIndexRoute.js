@@ -39,5 +39,7 @@
         controller.set('inputPriceMax', controller.get('maxPrice'));
         controller.set('model', model);
         controller.set('tagDefinitions', this.store.find('tagDefinition'));
+
+        this.controllerFor('application').updateActiveLink('catalogue');
     }
 });

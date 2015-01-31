@@ -33,8 +33,8 @@ namespace DiceWorld
 
             bundles.Add(new ScriptBundle("~/bundles/emberApp").Include(
                     "~/Scripts/Application/application.js",
-                    "~/Scripts/Controllers/*.js",
                     "~/Scripts/Models/*.js",
+                    "~/Scripts/Controllers/*.js",
                     "~/Scripts/Routes/*.js",
                     //"~/Scripts/Views/*.js",
                     "~/Scripts/Components/*.js"));

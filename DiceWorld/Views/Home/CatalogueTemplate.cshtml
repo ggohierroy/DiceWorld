@@ -1,7 +1,7 @@
 ﻿<script type="text/x-handlebars" data-template-name="catalogue">
     <div class="container">
         <div class="row">
-            <div class="col-sm-3">
+            <div class="col-sm-4 col-md-3">
                 <form>
                     <div class="form-group">
                         <label for="inputKeyword">Keyword</label>
@@ -9,56 +9,80 @@
                     </div>
                     <div class="form-group">
                         <label>Price</label>
-                        <div>
-                            <label for="inputPriceMin" class="sr-only">Price Min</label>
-                            {{input type="text" class="form-control reset-width inline-input" value=inputPriceMin id="inputPriceMin" placeholder="Min" size="4"}}
-                            <label for="inputPriceMax" class="sr-only">Price Max</label>
-                            {{input type="text" class="form-control reset-width inline-input" value=inputPriceMax id="inputPriceMax" placeholder="Max" size="4"}}
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <label for="inputPriceMin" class="sr-only">Price Min</label>
+                                {{input type="text" class="form-control" value=inputPriceMin id="inputPriceMin" placeholder="Min"}}
+                            </div>
+                            <div class="col-xs-6">
+                                <label for="inputPriceMax" class="sr-only">Price Max</label>
+                                {{input type="text" class="form-control" value=inputPriceMax id="inputPriceMax" placeholder="Max"}}
+                            </div>
                         </div>
                     </div>
                     <div class="form-group">
                         <label>Year Published</label>
-                        <div>
-                            <label for="inputPublishedFrom" class="sr-only">Published From</label>
-                            {{input type="text" class="form-control reset-width inline-input" value=inputPublishedFrom id="inputPublishedFrom" placeholder="From" size="4"}}
-                            <label for="inputPublishedTo" class="sr-only">Published To</label>
-                            {{input type="text" class="form-control reset-width inline-input" value=inputPublishedTo id="inputPublishedTo" placeholder="To" size="4"}}
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <label for="inputPublishedFrom" class="sr-only">Published From</label>
+                                {{input type="text" class="form-control" value=inputPublishedFrom id="inputPublishedFrom" placeholder="From"}}
+                            </div>
+                            <div class="col-xs-6">
+                                <label for="inputPublishedTo" class="sr-only">Published To</label>
+                                {{input type="text" class="form-control" value=inputPublishedTo id="inputPublishedTo" placeholder="To"}}
+                            </div>
                         </div>
                     </div>
                     <div class="form-group">
                         <label>Player Count</label>
-                        <div>
-                            <label for="inputMinPlayerCount" class="sr-only">Min Player Count</label>
-                            {{input type="text" class="form-control reset-width inline-input" value=inputPlayerCountMin id="inputMinPlayerCount" placeholder="Min" size="4"}}
-                            <label for="inputMaxPlayerCount" class="sr-only">Max Player Count</label>
-                            {{input type="text" class="form-control reset-width inline-input" value=inputPlayerCountMax id="inputMaxPlayerCount" placeholder="Max" size="4"}}
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <label for="inputMinPlayerCount" class="sr-only">Min Player Count</label>
+                                {{input type="text" class="form-control" value=inputPlayerCountMin id="inputMinPlayerCount" placeholder="Min"}}
+                            </div>
+                            <div class="col-xs-6">
+                                <label for="inputMaxPlayerCount" class="sr-only">Max Player Count</label>
+                                {{input type="text" class="form-control" value=inputPlayerCountMax id="inputMaxPlayerCount" placeholder="Max"}}
+                            </div>
                         </div>
                     </div>
                     <div class="form-group">
                         <label>Playing Time (Minutes)</label>
-                        <div>
-                            <label for="inputPlayingTimeMin" class="sr-only">Published From</label>
-                            {{input type="text" class="form-control reset-width inline-input" value=inputPlayingTimeMin id="inputPlayingTimeMin" placeholder="Min" size="4"}}
-                            <label for="inputPlayingTimeMax" class="sr-only">Published To</label>
-                            {{input type="text" class="form-control reset-width inline-input" value=inputPlayingTimeMax id="inputPlayingTimeMax" placeholder="Max" size="4"}}
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <label for="inputPlayingTimeMin" class="sr-only">Published From</label>
+                                {{input type="text" class="form-control" value=inputPlayingTimeMin id="inputPlayingTimeMin" placeholder="Min"}}
+                            </div>
+                            <div class="col-xs-6">
+                                <label for="inputPlayingTimeMax" class="sr-only">Published To</label>
+                                {{input type="text" class="form-control" value=inputPlayingTimeMax id="inputPlayingTimeMax" placeholder="Max"}}
+                            </div>
                         </div>
                     </div>
                     <div class="form-group">
                         <label>Game Weight (1-5)</label>
-                        <div>
-                            <label for="inputWeightMin" class="sr-only">Min Weight</label>
-                            {{input type="text" class="form-control reset-width inline-input" value=inputWeightMin id="inputWeightMin" placeholder="Min" size="4"}}
-                            <label for="inputWeightMax" class="sr-only">Max Weigth</label>
-                            {{input type="text" class="form-control reset-width inline-input" value=inputWeightMax id="inputWeightMax" placeholder="Max" size="4"}}
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <label for="inputWeightMin" class="sr-only">Min Weight</label>
+                                {{input type="text" class="form-control" value=inputWeightMin id="inputWeightMin" placeholder="Min"}}
+                            </div>
+                            <div class="col-xs-6">
+                                <label for="inputWeightMax" class="sr-only">Max Weigth</label>
+                                {{input type="text" class="form-control" value=inputWeightMax id="inputWeightMax" placeholder="Max"}}
+                            </div>
                         </div>
                     </div>
                     <div class="form-group">
                         <label>Rating (1-10)</label>
-                        <div>
-                            <label for="inputRatingMin" class="sr-only">Min Rating</label>
-                            {{input type="text" class="form-control reset-width inline-input" value=inputRatingMin id="inputRatingMin" placeholder="Min" size="4"}}
-                            <label for="inputRatingMax" class="sr-only">Max Rating</label>
-                            {{input type="text" class="form-control reset-width inline-input" value=inputRatingMax id="inputRatingMax" placeholder="Max" size="4"}}
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <label for="inputRatingMin" class="sr-only">Min Rating</label>
+                                {{input type="text" class="form-control" value=inputRatingMin id="inputRatingMin" placeholder="Min"}}
+                            </div>
+                            <div class="col-xs-6">
+                                <label for="inputRatingMax" class="sr-only">Max Rating</label>
+                                {{input type="text" class="form-control" value=inputRatingMax id="inputRatingMax" placeholder="Max"}}
+                            </div>
                         </div>
                     </div>
                     <div class="form-group">
@@ -87,7 +111,7 @@
                     <button {{action 'clear'}} class="btn btn-default">Clear</button>
                 </form>
             </div>
-            <div class="col-sm-9">
+            <div class="col-sm-8 col-md-9">
                 <!-- Pagination -->
                 <div class="input-group col-centered">
                     <span class="input-group-btn reset-width">

@@ -924,6 +924,7 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\Models\page.js" />
     <Content Include="Scripts\Models\tagDefinition.js" />
     <Content Include="Scripts\Models\boardGame.js" />
     <Content Include="Scripts\Models\boardGameStat.js" />
@@ -932,9 +933,11 @@
     <Content Include="Scripts\npm.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\Routes\aboutRoute.js" />
     <Content Include="Scripts\Routes\applicationIndexRoute.js" />
     <Content Include="Scripts\Routes\applicationRoute.js" />
     <Content Include="Scripts\Routes\catalogueIndexRoute.js" />
+    <Content Include="Scripts\Routes\home.js" />
     <Content Include="Scripts\Routes\routerMap.js" />
     <Content Include="Scripts\typeahead.bundle.js" />
     <Content Include="Scripts\typeahead.bundle.min.js" />
@@ -957,6 +960,7 @@
     <Content Include="Views\Home\HomeTemplate.cshtml" />
     <Content Include="Views\Home\CheckoutTemplate.cshtml" />
     <Content Include="Views\Home\CatalogueTemplate.cshtml" />
+    <Content Include="Views\Home\AboutTemplate.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
