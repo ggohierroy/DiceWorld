@@ -232,6 +232,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\TagDefinitionsController.cs" />
+    <Compile Include="DTOs\boardGameDTO.cs" />
     <Compile Include="DTOs\TagDefinitionsDTO.cs" />
     <Compile Include="DTOs\TagDefinitionsAutocompleteDTO.cs" />
     <Compile Include="DTOs\BoardGamesAutocompleteDTO.cs" />
@@ -901,7 +902,7 @@
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Scripts\Controllers\catalogueController.js" />
+    <Content Include="Scripts\Controllers\catalogueIndexController.js" />
     <Content Include="Scripts\Controllers\checkoutController.js" />
     <Content Include="Scripts\ember-data.js" />
     <Content Include="Scripts\ember-data.min.js" />
@@ -936,8 +937,8 @@
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\Routes\aboutRoute.js" />
     <Content Include="Scripts\Routes\applicationIndexRoute.js" />
-    <Content Include="Scripts\Routes\applicationRoute.js" />
     <Content Include="Scripts\Routes\catalogueRoute.js" />
+    <Content Include="Scripts\Routes\catalogueIndexRoute.js" />
     <Content Include="Scripts\Routes\homeRoute.js" />
     <Content Include="Scripts\Routes\routerMap.js" />
     <Content Include="Scripts\typeahead.bundle.js" />
@@ -963,6 +964,7 @@
     <Content Include="Views\Home\CatalogueTemplate.cshtml" />
     <Content Include="Views\Home\AboutTemplate.cshtml" />
     <Content Include="Views\Home\CatalogueLoadingTemplate.cshtml" />
+    <Content Include="Views\Home\BoardGameTemplate.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

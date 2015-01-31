@@ -1,0 +1,52 @@
+﻿<script type="text/x-handlebars" data-template-name="boardGame">
+    <div class="container">
+        <div class="col-lg-8 col-lg-offset-2">
+            <div class="page-header">
+                <h1><a {{bind-attr href="url"}} target="_blank">{{name}}</a> <small>{{yearPublished}}</small></h1>
+            </div>
+            <div class="row spacer">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <img {{bind-attr src='imageUrl' class=':img-thumbnail'}} />
+                    </div>
+                    <div class="col-lg-9">
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <ul class="list-group">
+                                    <li class="list-group-item">
+                                        <span class="badge">1</span>
+                                        Rank
+                                    </li>
+                                    <li class="list-group-item">
+                                        <span class="badge">1</span>
+                                        Rating
+                                    </li>
+                                    <li class="list-group-item">
+                                        <span class="badge">1</span>
+                                        Weight
+                                    </li>
+                                    <li class="list-group-item">
+                                        <span class="badge">{{minPlayers}} - {{maxPlayers}}</span>
+                                        Player Count
+                                    </li>
+                                    <li class="list-group-item">
+                                        <span class="badge">{{playingTime}}</span>
+                                        Playing Time
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-8">
+                                <div class="well text-center">
+                                    
+                                    <span class="label label-default">Tag1</span>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <pre class="no-word-break">{{unescapedDescription}}</pre>
+            </div>
+        </div>
+    </div>
+</script>

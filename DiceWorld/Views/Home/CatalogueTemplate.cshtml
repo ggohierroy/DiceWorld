@@ -1,4 +1,4 @@
-﻿<script type="text/x-handlebars" data-template-name="catalogue">
+﻿<script type="text/x-handlebars" data-template-name="catalogue/index">
     <div class="container">
         <div class="row">
             <div class="col-sm-4 col-md-3">
@@ -133,7 +133,7 @@
                             <img class="img-rounded" {{bind-attr src=boardGame.imageUrl}} alt=" ...">
                             <div class="caption">
                                 <h4>{{boardGame.name}}</h4>
-                                <p><a href="#" class="btn btn-primary" role="button">More</a> <a href="#" class="btn btn-default pull-right" role="button">{{boardGame.price}}$ <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a></p>
+                                <p>{{#link-to 'boardGame' boardGame class="btn btn-primary"}}More{{/link-to}}<a href="#" class="btn btn-default pull-right" role="button">{{boardGame.price}}$ <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a></p>
                             </div>
                         </div>
                     </div>

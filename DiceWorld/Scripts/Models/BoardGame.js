@@ -13,5 +13,9 @@
     price: DS.attr('number'),
     imageUrl: function() {
         return '/Content/Images/Processed/pic' + this.get('imageId') + '.jpg';
-    }.property('imageId')
+    }.property('imageId'),
+    unescapedDescription: function () {
+        var description = this.get('description');
+        return description ? Ember.String.htmlSafe(description) : '';
+    }.property('description'),
 });

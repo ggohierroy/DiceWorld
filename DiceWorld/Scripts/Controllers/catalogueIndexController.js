@@ -1,4 +1,4 @@
-﻿App.CatalogueController = Ember.ArrayController.extend({
+﻿App.CatalogueIndexController = Ember.ArrayController.extend({
     queryParams: [
         'page',
         'itemsPerPage',

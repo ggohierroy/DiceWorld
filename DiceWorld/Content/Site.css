@@ -10,6 +10,14 @@ body { padding-top: 70px; }
     width: auto !important;
 }
 
+/* Display pre-formatted game descriptions correctly */
+.no-word-break {
+    word-break: normal;
+    word-wrap: normal;
+    white-space: pre-wrap;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
 /* Allows having both the input boxes next to each other */
 .inline-input {
     display: inline-block !important;

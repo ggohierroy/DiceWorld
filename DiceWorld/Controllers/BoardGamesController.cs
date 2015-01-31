@@ -26,54 +26,63 @@ namespace DiceWorld.Controllers
         {
             var boardGames = db.BoardGames.AsQueryable();
 
-            if (!string.IsNullOrEmpty(parameters.Keyword))
-                boardGames = boardGames.Where(b => b.Name.ToLower().Contains(parameters.Keyword.ToLower()));
+            var page = 1; 
+            var itemsPerPage = 24;
 
-            if (parameters.PublishedFrom != null)
-                boardGames = boardGames.Where(b => b.YearPublished >= parameters.PublishedFrom);
-            if (parameters.PublishedTo != null)
-                boardGames = boardGames.Where(b => b.YearPublished <= parameters.PublishedTo);
-
-            if (parameters.ExactRange)
+            if (parameters != null)
             {
-                if (parameters.MaxPlayers != null)
-                    boardGames = boardGames.Where(b => b.MaxPlayers == parameters.MaxPlayers);
-                if (parameters.MinPlayers != null)
-                    boardGames = boardGames.Where(b => b.MinPlayers == parameters.MinPlayers);
+                if (!string.IsNullOrEmpty(parameters.Keyword))
+                    boardGames = boardGames.Where(b => b.Name.ToLower().Contains(parameters.Keyword.ToLower()));
+
+                if (parameters.PublishedFrom != null)
+                    boardGames = boardGames.Where(b => b.YearPublished >= parameters.PublishedFrom);
+                if (parameters.PublishedTo != null)
+                    boardGames = boardGames.Where(b => b.YearPublished <= parameters.PublishedTo);
+
+                if (parameters.ExactRange)
+                {
+                    if (parameters.MaxPlayers != null)
+                        boardGames = boardGames.Where(b => b.MaxPlayers == parameters.MaxPlayers);
+                    if (parameters.MinPlayers != null)
+                        boardGames = boardGames.Where(b => b.MinPlayers == parameters.MinPlayers);
+                }
+                else
+                {
+                    if (parameters.MaxPlayers != null)
+                        boardGames = boardGames.Where(b => b.MaxPlayers >= parameters.MaxPlayers);
+                    if (parameters.MinPlayers != null)
+                        boardGames = boardGames.Where(b => b.MinPlayers <= parameters.MinPlayers);
+                }
+
+                if (parameters.MaxPrice != null)
+                    boardGames = boardGames.Where(b => b.Price <= parameters.MaxPrice);
+                if (parameters.MinPrice != null)
+                    boardGames = boardGames.Where(b => b.Price >= parameters.MinPrice);
+
+                if (parameters.MaxPlayingTime != null)
+                    boardGames = boardGames.Where(b => b.PlayingTime <= parameters.MaxPlayingTime);
+                if (parameters.MinPlayingTime != null)
+                    boardGames = boardGames.Where(b => b.PlayingTime >= parameters.MinPlayingTime);
+
+                if (parameters.MinWeight != null)
+                    boardGames = boardGames.Where(b => b.BoardGameStats.AverageWeight >= parameters.MinWeight);
+                if (parameters.MaxWeight != null)
+                    boardGames = boardGames.Where(b => b.BoardGameStats.AverageWeight <= parameters.MaxWeight);
+
+                if (parameters.MinRating != null)
+                    boardGames = boardGames.Where(b => b.BoardGameStats.BayesianRating >= parameters.MinRating);
+                if (parameters.MaxRating != null)
+                    boardGames = boardGames.Where(b => b.BoardGameStats.BayesianRating <= parameters.MaxRating);
+
+                if (parameters.IncludeTags != null)
+                    boardGames = boardGames.Where(b => parameters.IncludeTags.All(i => b.Tags.Select(c => c.TagDefinitionId).Contains(i)));
+
+                if (parameters.Page.HasValue)
+                    page = (int) parameters.Page.Value;
+
+                if (parameters.ItemsPerPage.HasValue)
+                    itemsPerPage = (int)parameters.ItemsPerPage.Value;
             }
-            else
-            {
-                if (parameters.MaxPlayers != null)
-                    boardGames = boardGames.Where(b => b.MaxPlayers >= parameters.MaxPlayers);
-                if (parameters.MinPlayers != null)
-                    boardGames = boardGames.Where(b => b.MinPlayers <= parameters.MinPlayers);
-            }
-
-            if (parameters.MaxPrice != null)
-                boardGames = boardGames.Where(b => b.Price <= parameters.MaxPrice);
-            if (parameters.MinPrice != null)
-                boardGames = boardGames.Where(b => b.Price >= parameters.MinPrice);
-
-            if (parameters.MaxPlayingTime != null)
-                boardGames = boardGames.Where(b => b.PlayingTime <= parameters.MaxPlayingTime);
-            if (parameters.MinPlayingTime != null)
-                boardGames = boardGames.Where(b => b.PlayingTime >= parameters.MinPlayingTime);
-
-            if (parameters.MinWeight != null)
-                boardGames = boardGames.Where(b => b.BoardGameStats.AverageWeight >= parameters.MinWeight);
-            if (parameters.MaxWeight != null)
-                boardGames = boardGames.Where(b => b.BoardGameStats.AverageWeight <= parameters.MaxWeight);
-
-            if (parameters.MinRating != null)
-                boardGames = boardGames.Where(b => b.BoardGameStats.BayesianRating >= parameters.MinRating);
-            if (parameters.MaxRating != null)
-                boardGames = boardGames.Where(b => b.BoardGameStats.BayesianRating <= parameters.MaxRating);
-
-            if (parameters.IncludeTags != null)
-                boardGames = boardGames.Where(b => parameters.IncludeTags.All(i => b.Tags.Select(c => c.TagDefinitionId).Contains(i)));
-
-            var page = (int) (parameters.Page ?? 1);
-            var itemsPerPage = (int) (parameters.ItemsPerPage ?? 24);
 
             return new BoardGamesDTO
             {
@@ -97,7 +106,7 @@ namespace DiceWorld.Controllers
         }
 
         // GET: api/BoardGames/5
-        [ResponseType(typeof(BoardGame))]
+        [ResponseType(typeof(BoardGameDTO))]
         [Route("boardgames/{id:int}")]
         public async Task<IHttpActionResult> GetBoardGame(int id)
         {
@@ -107,7 +116,7 @@ namespace DiceWorld.Controllers
                 return NotFound();
             }
 
-            return Ok(boardGame);
+            return Ok(new BoardGameDTO {BoardGame = boardGame});
         }
 
         // PUT: api/BoardGames/5
