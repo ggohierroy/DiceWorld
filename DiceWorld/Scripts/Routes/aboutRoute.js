@@ -1,5 +1,5 @@
 ﻿App.AboutRoute = Ember.Route.extend({
-    setupController: function() {
+    beforeModel: function() {
         this.controllerFor('application').updateActiveLink('about');
     }
 });

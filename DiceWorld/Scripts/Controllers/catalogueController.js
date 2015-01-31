@@ -66,16 +66,13 @@
 
     // Observing when the tag definitions get loaded from the server
     setInputTags: function () {
-        if (!this.get('tagDefinitions.isFulfilled'))
-            return;
-        
         var includeTags = this.get('includeTags');
         var tagDefinitions = this.get('tagDefinitions').filter(function(item) {
             return includeTags.contains(item.id);
         });
 
         tagDefinitions.forEach(function (item) { this.addTag(item); }, this);
-    }.observes('tagDefinitions.isFulfilled'),
+    },
 
     addTag: function(tagDefinition) {
         if (!this.get('inputTags').contains(tagDefinition))

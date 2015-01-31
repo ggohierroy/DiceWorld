@@ -41,6 +41,7 @@ namespace DiceWorld
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
+                      "~/Content/circle.css",
                       "~/Content/site.css"));
         }
     }

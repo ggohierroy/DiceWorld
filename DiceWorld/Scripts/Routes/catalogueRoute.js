@@ -18,10 +18,18 @@
         minRating: { refreshModel: true },
         maxRating: { refreshModel: true }
     },
-    model: function (params) {
-        return this.store.find('boardGame', params);
+    beforeModel: function() {
+        // Update the active page
+        this.controllerFor('application').updateActiveLink('catalogue');
     },
-    setupController: function(controller, model) {
+    model: function (params) {
+        return Ember.RSVP.hash({
+            boardGames: this.store.find('boardGame', params),
+            tagDefinitions: this.store.find('tagDefinition')
+        });
+    },
+    setupController: function (controller, model) {
+        // Set the inputs
         controller.set('inputPage', controller.get('page'));
         controller.set('inputKeyword', controller.get('keyword'));
         controller.set('inputPublishedFrom', controller.get('publishedFrom'));
@@ -37,9 +45,12 @@
         controller.set('inputRatingMax', controller.get('maxRating'));
         controller.set('inputPriceMin', controller.get('minPrice'));
         controller.set('inputPriceMax', controller.get('maxPrice'));
-        controller.set('model', model);
-        controller.set('tagDefinitions', this.store.find('tagDefinition'));
 
-        this.controllerFor('application').updateActiveLink('catalogue');
+        // Set tag definitions and display already selected tags
+        controller.set('tagDefinitions', model.tagDefinitions);
+        controller.setInputTags();
+
+        // Set the model
+        controller.set('model', model.boardGames);
     }
 });

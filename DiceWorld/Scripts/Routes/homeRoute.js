@@ -1,5 +1,5 @@
 ﻿App.HomeRoute = Ember.Route.extend({
-    setupController: function () {
+    beforeModel: function () {
         this.controllerFor('application').updateActiveLink('home');
     }
 });

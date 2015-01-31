@@ -265,6 +265,7 @@
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\circle.css" />
     <Content Include="Content\Images\Thumbnails\pic1001002_t.jpg" />
     <Content Include="Content\Images\Thumbnails\pic1004112_t.jpg" />
     <Content Include="Content\Images\Thumbnails\pic1011435_t.jpg" />
@@ -936,8 +937,8 @@
     <Content Include="Scripts\Routes\aboutRoute.js" />
     <Content Include="Scripts\Routes\applicationIndexRoute.js" />
     <Content Include="Scripts\Routes\applicationRoute.js" />
-    <Content Include="Scripts\Routes\catalogueIndexRoute.js" />
-    <Content Include="Scripts\Routes\home.js" />
+    <Content Include="Scripts\Routes\catalogueRoute.js" />
+    <Content Include="Scripts\Routes\homeRoute.js" />
     <Content Include="Scripts\Routes\routerMap.js" />
     <Content Include="Scripts\typeahead.bundle.js" />
     <Content Include="Scripts\typeahead.bundle.min.js" />
@@ -961,6 +962,7 @@
     <Content Include="Views\Home\CheckoutTemplate.cshtml" />
     <Content Include="Views\Home\CatalogueTemplate.cshtml" />
     <Content Include="Views\Home\AboutTemplate.cshtml" />
+    <Content Include="Views\Home\CatalogueLoadingTemplate.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
