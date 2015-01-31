@@ -18,11 +18,7 @@
             }
         });
 
-        engine.clearPrefetchCache();
-
-        var promise = engine.initialize();
-        promise.done(function () { console.log('Bloodhound initialized successfully!'); })
-            .fail(function () { console.log('Error initializing Bloodhound!'); });
+        engine.initialize();
         
         var typeahead = $(this.get('element')).typeahead(null, {
             displayKey: 'name',
