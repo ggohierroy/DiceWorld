@@ -11,9 +11,15 @@
     boardGameStat: DS.belongsTo('boardGameStat', { async: true }),
     imageId: DS.attr('number'),
     price: DS.attr('number'),
-    imageUrl: function() {
+    imageThumbnailUrl: function() {
         return '/Content/Images/Processed/pic' + this.get('imageId') + '.jpg';
     }.property('imageId'),
+    imageUrl: function() {
+        return '/Content/Images/Full/pic' +this.get('imageId') + '.jpg';
+    }.property('imageId'),
+    bggUrl: function() {
+        return 'http://www.boardgamegeek.com/boardgame/' + this.get('bggId');
+    }.property('bggId'),
     unescapedDescription: function () {
         var description = this.get('description');
         return description ? Ember.String.htmlSafe(description) : '';
