@@ -84,6 +84,8 @@ namespace DiceWorld.Controllers
                     itemsPerPage = (int)parameters.ItemsPerPage.Value;
             }
 
+            var total = boardGames.Count();
+
             boardGames = boardGames
                 .Include(b => b.Tags)
                 .OrderBy(b => b.BoardGameStats.Rank)
@@ -108,7 +110,7 @@ namespace DiceWorld.Controllers
                     TagDefinitions = b.Tags.Select(t => t.TagDefinitionId).ToList(),
                     YearPublished = b.YearPublished
                 }),
-                Meta = new Meta { Total = boardGames.Count() }
+                Meta = new Meta { Total = total }
             };
         }
 

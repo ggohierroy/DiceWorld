@@ -937,6 +937,7 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\Routes\aboutRoute.js" />
+    <Content Include="Scripts\Routes\applicationRoute.js" />
     <Content Include="Scripts\Routes\applicationIndexRoute.js" />
     <Content Include="Scripts\Routes\catalogueRoute.js" />
     <Content Include="Scripts\Routes\catalogueIndexRoute.js" />

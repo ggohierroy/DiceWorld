@@ -21,7 +21,7 @@
     model: function (params) {
         return Ember.RSVP.hash({
             boardGames: this.store.find('boardGame', params),
-            tagDefinitions: this.store.find('tagDefinition')
+            tagDefinitions: this.store.all('tagDefinition')
         });
     },
     setupController: function (controller, model) {
