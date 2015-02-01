@@ -8,7 +8,6 @@ namespace DiceWorld.Models
     public class BoardGameStats
     {
         [Key, ForeignKey("BoardGame")]
-        [JsonIgnore]
         public int Id { get; set; }
 
         /// <summary>

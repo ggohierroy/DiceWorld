@@ -3,5 +3,6 @@
     description: DS.attr('string'),
     occurences: DS.attr('number'),
     tagTypeId: DS.attr('number'),
-    isImportant: DS.attr('boolean')
+    isImportant: DS.attr('boolean'),
+    boardGames: DS.hasMany('boardGame')
 });

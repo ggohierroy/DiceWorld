@@ -9,22 +9,25 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
+using DiceWorld.DTOs;
 using DiceWorld.Models;
 
 namespace DiceWorld.Controllers
 {
+    [RoutePrefix("api")]
     public class BoardGameStatsController : ApiController
     {
         private DatabaseContext db = new DatabaseContext();
 
-        // GET: api/BoardGameStats
+        // GET: api/BoardGameStat
         public IQueryable<BoardGameStats> GetBoardGameStats()
         {
             return db.BoardGameStats;
         }
 
-        // GET: api/BoardGameStats/5
-        [ResponseType(typeof(BoardGameStats))]
+        // GET: api/BoardGameStat/5
+        [Route("BoardGameStats/{id:int}")]
+        [ResponseType(typeof(BoardGameStatContainerDTO))]
         public async Task<IHttpActionResult> GetBoardGameStats(int id)
         {
             BoardGameStats boardGameStats = await db.BoardGameStats.FindAsync(id);
@@ -33,10 +36,13 @@ namespace DiceWorld.Controllers
                 return NotFound();
             }
 
-            return Ok(boardGameStats);
+            return Ok(new BoardGameStatContainerDTO
+            {
+                BoardGameStat = boardGameStats
+            });
         }
 
-        // PUT: api/BoardGameStats/5
+        // PUT: api/BoardGameStat/5
         [ResponseType(typeof(void))]
         public async Task<IHttpActionResult> PutBoardGameStats(int id, BoardGameStats boardGameStats)
         {
@@ -71,7 +77,7 @@ namespace DiceWorld.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/BoardGameStats
+        // POST: api/BoardGameStat
         [ResponseType(typeof(BoardGameStats))]
         public async Task<IHttpActionResult> PostBoardGameStats(BoardGameStats boardGameStats)
         {
@@ -101,7 +107,7 @@ namespace DiceWorld.Controllers
             return CreatedAtRoute("DefaultApi", new { id = boardGameStats.Id }, boardGameStats);
         }
 
-        // DELETE: api/BoardGameStats/5
+        // DELETE: api/BoardGameStat/5
         [ResponseType(typeof(BoardGameStats))]
         public async Task<IHttpActionResult> DeleteBoardGameStats(int id)
         {

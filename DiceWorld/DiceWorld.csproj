@@ -232,7 +232,9 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\TagDefinitionsController.cs" />
-    <Compile Include="DTOs\boardGameDTO.cs" />
+    <Compile Include="DTOs\BoardGameContainerDTO.cs" />
+    <Compile Include="DTOs\BoardGameStatContainerDTO.cs" />
+    <Compile Include="DTOs\BoardGameDTO.cs" />
     <Compile Include="DTOs\TagDefinitionsDTO.cs" />
     <Compile Include="DTOs\TagDefinitionsAutocompleteDTO.cs" />
     <Compile Include="DTOs\BoardGamesAutocompleteDTO.cs" />
@@ -929,8 +931,7 @@
     <Content Include="Scripts\Models\page.js" />
     <Content Include="Scripts\Models\tagDefinition.js" />
     <Content Include="Scripts\Models\boardGame.js" />
-    <Content Include="Scripts\Models\boardGameStat.js" />
-    <Content Include="Scripts\Models\tag.js" />
+    <Content Include="Scripts\Models\boardGameStats.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\npm.js" />
     <Content Include="Scripts\respond.js" />
@@ -961,7 +962,7 @@
     <Content Include="Views\Home\ApplicationTemplate.cshtml" />
     <Content Include="Views\Home\HomeTemplate.cshtml" />
     <Content Include="Views\Home\CheckoutTemplate.cshtml" />
-    <Content Include="Views\Home\CatalogueTemplate.cshtml" />
+    <Content Include="Views\Home\CatalogueIndexTemplate.cshtml" />
     <Content Include="Views\Home\AboutTemplate.cshtml" />
     <Content Include="Views\Home\CatalogueLoadingTemplate.cshtml" />
     <Content Include="Views\Home\BoardGameTemplate.cshtml" />

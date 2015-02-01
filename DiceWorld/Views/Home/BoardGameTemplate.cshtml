@@ -14,15 +14,15 @@
                             <div class="col-lg-4">
                                 <ul class="list-group">
                                     <li class="list-group-item">
-                                        <span class="badge">1</span>
+                                        <span class="badge">{{boardGameStat.rank}}</span>
                                         Rank
                                     </li>
                                     <li class="list-group-item">
-                                        <span class="badge">1</span>
+                                        <span class="badge">{{boardGameStat.bayesianRating}}</span>
                                         Rating
                                     </li>
                                     <li class="list-group-item">
-                                        <span class="badge">1</span>
+                                        <span class="badge">{{boardGameStat.averageWeight}}</span>
                                         Weight
                                     </li>
                                     <li class="list-group-item">
@@ -37,9 +37,9 @@
                             </div>
                             <div class="col-lg-8">
                                 <div class="well text-center">
-                                    
-                                    <span class="label label-default">Tag1</span>
-                                    
+                                    {{#each tag in tagDefinitions}}
+                                    <span class="label label-default">{{tag.name}}</span>
+                                    {{/each}}
                                 </div>
                             </div>
                         </div>

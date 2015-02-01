@@ -7,8 +7,8 @@
     maxPlayers: DS.attr('number'),
     playingTime: DS.attr('number'),
     minAge: DS.attr('number'),
-    tags: DS.hasMany('tag'),
-    boardGameStats: DS.belongsTo('boardGameStat'),
+    tagDefinitions: DS.hasMany('tagDefinition', { async: true }),
+    boardGameStat: DS.belongsTo('boardGameStat', { async: true }),
     imageId: DS.attr('number'),
     price: DS.attr('number'),
     imageUrl: function() {

@@ -20,7 +20,7 @@ namespace DiceWorld.Controllers
         private DatabaseContext db = new DatabaseContext();
 
         // GET: api/TagDefinitions
-        [Route("tagDefinitions")]
+        [Route("TagDefinitions")]
         public TagDefinitionsDTO GetTagDefinitions()
         {
             var tagDefinitions = db.TagDefinitions.OrderByDescending(t => t.Occurences);
@@ -40,7 +40,7 @@ namespace DiceWorld.Controllers
             return Ok(tagDefinition);
         }
 
-        [Route("tagDefinitionsForAutocomplete")]
+        [Route("TagDefinitionsForAutocomplete")]
         public IQueryable<TagDefinitionsAutocompleteDTO> GetTagDefinitionsForAutoComplete(string keyword)
         {
             return db.TagDefinitions
