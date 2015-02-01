@@ -23,9 +23,9 @@
                 </ul>
                 <form class="navbar-form navbar-left hidden-sm" role="search">
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search">
+                        {{auto-complete type="text" class="typeahead form-control" placeholder="Search" value=inputKeyword id="applicationInputKeyword" resource-name="boardGames" autocompleted="autoCompleted" selected="autoCompleted"}}
                     </div>
-                    <button type="submit" class="btn btn-default">Submit</button>
+                    <button {{action "search"}} class="btn btn-default">Submit</button>
                 </form>
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="#" class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></a></li>
