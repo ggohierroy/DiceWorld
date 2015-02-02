@@ -941,6 +941,7 @@
     <Content Include="Scripts\Routes\applicationIndexRoute.js" />
     <Content Include="Scripts\Routes\catalogueRoute.js" />
     <Content Include="Scripts\Routes\catalogueIndexRoute.js" />
+    <Content Include="Scripts\Routes\homeIndexRoute.js" />
     <Content Include="Scripts\Routes\homeRoute.js" />
     <Content Include="Scripts\Routes\routerMap.js" />
     <Content Include="Scripts\typeahead.bundle.js" />
@@ -967,6 +968,7 @@
     <Content Include="Views\Home\AboutTemplate.cshtml" />
     <Content Include="Views\Home\CatalogueLoadingTemplate.cshtml" />
     <Content Include="Views\Home\BoardGameTemplate.cshtml" />
+    <Content Include="Views\Home\HomeNewTemplate.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,5 +1,9 @@
 ﻿App.Router.map(function () {
-    this.route('home', { path: '/home' });
+    this.resource('home', { path: '/home' }, function() {
+        this.route('new', { path: '/new' });
+        this.route('hotness', { path: '/hotness' });
+        this.route('upcoming', { path: '/upcoming' });
+    });
     this.route('checkout', { path: '/checkout' });
     this.route('about', { path: '/about' });
     this.route('contact', { path: '/contact' });
