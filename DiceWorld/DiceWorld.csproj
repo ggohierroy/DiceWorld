@@ -900,6 +900,7 @@
     <None Include="Properties\PublishProfiles\diceworld.pubxml" />
     <Content Include="Scripts\Components\autocomplete.js" />
     <Content Include="Scripts\Controllers\applicationController.js" />
+    <Content Include="Scripts\Controllers\homeController.js" />
     <Content Include="Scripts\ember-data.js.map" />
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -941,8 +942,11 @@
     <Content Include="Scripts\Routes\applicationIndexRoute.js" />
     <Content Include="Scripts\Routes\catalogueRoute.js" />
     <Content Include="Scripts\Routes\catalogueIndexRoute.js" />
+    <Content Include="Scripts\Routes\homeHotnessRoute.js" />
     <Content Include="Scripts\Routes\homeIndexRoute.js" />
+    <Content Include="Scripts\Routes\homeNewRoute.js" />
     <Content Include="Scripts\Routes\homeRoute.js" />
+    <Content Include="Scripts\Routes\homeUpcomingRoute.js" />
     <Content Include="Scripts\Routes\routerMap.js" />
     <Content Include="Scripts\typeahead.bundle.js" />
     <Content Include="Scripts\typeahead.bundle.min.js" />
@@ -969,6 +973,7 @@
     <Content Include="Views\Home\CatalogueLoadingTemplate.cshtml" />
     <Content Include="Views\Home\BoardGameTemplate.cshtml" />
     <Content Include="Views\Home\HomeNewTemplate.cshtml" />
+    <Content Include="Views\Home\HomeUpcomingTemplate.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -5,9 +5,9 @@
         <div class="row">
             <div class="col-sm-2">
                 <ul class="nav nav-pills nav-stacked">
-                    <li role="presentation" class="active"><a href="#">New</a></li>
-                    <li role="presentation"><a href="#">Hotness</a></li>
-                    <li role="presentation"><a href="#">Upcoming</a></li>
+                    {{#each page in pages}}
+                    <li {{bind-attr class="page.isActive:active" role="presentation"}}><a href="javascript:undefined" {{action 'navigate' page}}>{{page.name}}</a></li>
+                    {{/each}}
                 </ul>
             </div>
             <div class="col-sm-10">
