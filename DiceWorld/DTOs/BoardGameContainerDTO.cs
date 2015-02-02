@@ -10,7 +10,7 @@ namespace DiceWorld.DTOs
     {
         public BoardGameDTO BoardGame { get; set; }
 
-        public List<TagDefinition> TagDefinitions { get; set; }
+        //public List<TagDefinition> TagDefinitions { get; set; }
 
         public List<BoardGameStats> BoardGameStat { get; set; }
     }

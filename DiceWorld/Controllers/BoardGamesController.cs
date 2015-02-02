@@ -161,7 +161,7 @@ namespace DiceWorld.Controllers
                     TagDefinitions = boardGame.Tags.Select(t => t.TagDefinitionId).ToList(),
                     YearPublished = boardGame.YearPublished
                 },
-                TagDefinitions = boardGame.Tags.Select(t => t.TagDefinition).ToList(),
+                //TagDefinitions = boardGame.Tags.Select(t => t.TagDefinition).ToList(),
                 BoardGameStat = new List<BoardGameStats> { boardGame.BoardGameStats }
             });
         }
