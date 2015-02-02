@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using DiceWorld.Common;
 
 namespace DiceWorld.DTOs
 {
@@ -80,5 +81,10 @@ namespace DiceWorld.DTOs
         /// Number of results to return
         /// </summary>
         public uint? ItemsPerPage { get; set; }
+
+        /// <summary>
+        /// Sort by
+        /// </summary>
+        public Sort? SortBy { get; set; }
     }
 }

@@ -231,6 +231,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Common\Enums.cs" />
     <Compile Include="Controllers\TagDefinitionsController.cs" />
     <Compile Include="DTOs\BoardGameContainerDTO.cs" />
     <Compile Include="DTOs\BoardGameStatContainerDTO.cs" />

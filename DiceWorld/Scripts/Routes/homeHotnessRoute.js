@@ -3,4 +3,7 @@
         // Update the active page
         this.controllerFor('home').updateActiveLink('home.hotness');
     },
+    model: function () {
+        return this.store.find('boardGame', { sortBy: "hotness" });
+    }
 });

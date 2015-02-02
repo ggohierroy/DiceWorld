@@ -11,8 +11,10 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
+using DiceWorld.Common;
 using DiceWorld.DTOs;
 using DiceWorld.Models;
+using Microsoft.Ajax.Utilities;
 
 namespace DiceWorld.Controllers
 {
@@ -28,6 +30,7 @@ namespace DiceWorld.Controllers
 
             var page = 1; 
             var itemsPerPage = 24;
+            var sortBy = Sort.Rank;
 
             if (parameters != null)
             {
@@ -82,14 +85,29 @@ namespace DiceWorld.Controllers
 
                 if (parameters.ItemsPerPage.HasValue)
                     itemsPerPage = (int)parameters.ItemsPerPage.Value;
+
+                if (parameters.SortBy.HasValue)
+                    sortBy = parameters.SortBy.Value;
             }
 
             var total = boardGames.Count();
 
-            boardGames = boardGames
-                .Include(b => b.Tags)
-                .OrderBy(b => b.BoardGameStats.Rank)
-                .Skip((page - 1)*itemsPerPage)
+            boardGames = boardGames.Include(b => b.Tags);
+
+            switch(sortBy)
+            {
+                case Sort.Rank:
+                    boardGames = boardGames.OrderBy(b => b.BoardGameStats.Rank);
+                    break;
+                case Sort.Hotness:
+                    boardGames = boardGames.OrderByDescending(b => b.BoardGameStats.Hotness);
+                    break;
+                default:
+                    boardGames = boardGames.OrderBy(b => b.BoardGameStats.Rank);
+                    break;
+            }
+                
+            boardGames = boardGames.Skip((page - 1)*itemsPerPage)
                 .Take(itemsPerPage);
 
             return new BoardGamesDTO

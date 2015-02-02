@@ -49,5 +49,7 @@ namespace DiceWorld.Models
         public DateTime UpdatedDate { get; set; }
         [JsonIgnore]
         public DateTime? DeletedDate { get; set; }
+
+        public int Hotness { get; set; }
     }
 }
