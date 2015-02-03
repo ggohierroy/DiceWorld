@@ -21,7 +21,7 @@ namespace DiceWorld.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("DiceWorld", throwIfV1Schema: false)
         {
         }
         

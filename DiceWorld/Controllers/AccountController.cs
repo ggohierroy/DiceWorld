@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Http;
 using System.Web.Http.ModelBinding;
+using Microsoft.Ajax.Utilities;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
@@ -337,6 +338,14 @@ namespace DiceWorld.Controllers
             {
                 return GetErrorResult(result);
             }
+
+            var token = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
+
+            var callbackUrl = Url.Link("api/account/confirmEmail", new {userId = user.Id, token});
+
+            var message = "Please confirm your account by clicking this link: <a href=\"" + callbackUrl + "\">link</a>";
+
+            await UserManager.SendEmailAsync(user.Id, "Dice World", message);
 
             return Ok();
         }
