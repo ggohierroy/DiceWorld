@@ -902,6 +902,7 @@
     <Content Include="Scripts\Components\autocomplete.js" />
     <Content Include="Scripts\Controllers\applicationController.js" />
     <Content Include="Scripts\Controllers\homeController.js" />
+    <Content Include="Scripts\Controllers\registerController.js" />
     <Content Include="Scripts\ember-data.js.map" />
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -977,6 +978,7 @@
     <Content Include="Views\Home\BoardGameTemplate.cshtml" />
     <Content Include="Views\Home\HomeNewTemplate.cshtml" />
     <Content Include="Views\Home\HomeUpcomingTemplate.cshtml" />
+    <Content Include="Views\Home\RegisterTemplate.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

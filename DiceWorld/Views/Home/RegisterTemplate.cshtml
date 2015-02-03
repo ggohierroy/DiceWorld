@@ -1,0 +1,24 @@
+﻿<script type="text/x-handlebars" data-template-name="register">
+    <div class="container">
+        <ul>
+            {{#each error in errors}}
+            <li>{{error}}</li>
+            {{/each}}
+        </ul>
+        <form>
+            <div class="form-group">
+                <label for="inputEmail">Email address</label>
+                {{input type="email" class="form-control" id="inputEmail" placeholder="Enter email" value=email}}
+            </div>
+            <div class="form-group">
+                <label for="inputPassword">Password</label>
+                {{input type="password" class="form-control" id="inputPassword" placeholder="Password" value=password}}
+            </div>
+            <div class="form-group">
+                <label for="inputConfirmPassword">Confirm Password</label>
+                {{input type="password" class="form-control" id="inputConfirmPassword" placeholder="Password" value=confirmPassword}}
+            </div>
+            <button {{action 'register'}} class="btn btn-default">Submit</button>
+        </form>
+    </div>
+</script>
