@@ -5,5 +5,8 @@
     },
     model: function () {
         return this.store.find('boardGame', { sortBy: "hotness" });
+    },
+    renderTemplate: function() {
+        this.render('boardGameList');
     }
 });

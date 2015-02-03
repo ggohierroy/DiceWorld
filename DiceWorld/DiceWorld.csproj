@@ -930,6 +930,7 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\Models\cart.js" />
     <Content Include="Scripts\Models\page.js" />
     <Content Include="Scripts\Models\tagDefinition.js" />
     <Content Include="Scripts\Models\boardGame.js" />
@@ -941,6 +942,7 @@
     <Content Include="Scripts\Routes\aboutRoute.js" />
     <Content Include="Scripts\Routes\applicationRoute.js" />
     <Content Include="Scripts\Routes\applicationIndexRoute.js" />
+    <Content Include="Scripts\Routes\cartRoute.js" />
     <Content Include="Scripts\Routes\catalogueRoute.js" />
     <Content Include="Scripts\Routes\catalogueIndexRoute.js" />
     <Content Include="Scripts\Routes\homeHotnessRoute.js" />
