@@ -81,4 +81,15 @@ namespace DiceWorld.Models
         [Compare("NewPassword", ErrorMessage = "The new password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
     }
+
+    public class ConfirmEmailBindingModel
+    {
+        [Required(AllowEmptyStrings = false)]
+        [Display(Name = "User Identifier")]
+        public string UserId { get; set; }
+
+        [Required(AllowEmptyStrings = false)]
+        [Display(Name = "Token")]
+        public string Token { get; set; }
+    }
 }

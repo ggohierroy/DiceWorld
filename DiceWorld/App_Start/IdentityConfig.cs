@@ -1,4 +1,5 @@
 ﻿using System.Threading.Tasks;
+using DiceWorld.Providers;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
@@ -34,6 +35,9 @@ namespace DiceWorld
                 RequireLowercase = true,
                 RequireUppercase = true,
             };
+
+            manager.EmailService = new EmailService();
+
             var dataProtectionProvider = options.DataProtectionProvider;
             if (dataProtectionProvider != null)
             {

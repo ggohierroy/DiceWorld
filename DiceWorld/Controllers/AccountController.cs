@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Net.Http;
 using System.Security.Claims;
 using System.Security.Cryptography;
+using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Http;
@@ -341,13 +342,44 @@ namespace DiceWorld.Controllers
 
             var token = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
 
-            var callbackUrl = Url.Link("api/account/confirmEmail", new {userId = user.Id, token});
+            var callbackUrl = Url.Link("Default", new { Controller = "Home", Action = "Index" });
+            callbackUrl += "#/login?userId=" + user.Id + "&token=" + token;
 
-            var message = "Please confirm your account by clicking this link: <a href=\"" + callbackUrl + "\">link</a>";
+            var message = "Please confirm your account by clicking this link: <a href=\"" + callbackUrl + "\">link</a>"; ;
 
             await UserManager.SendEmailAsync(user.Id, "Dice World", message);
 
-            return Ok();
+            return Ok(new { Message = "E-mail confirmation sent." });
+        }
+
+        [AllowAnonymous]
+        [HttpPost]
+        [Route("ConfirmEmail", Name = "ConfirmEmail")]
+        public async Task<IHttpActionResult> ConfirmEmail([FromBody] ConfirmEmailBindingModel confirmEmailBinding)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            IdentityResult result;
+            try
+            {
+                result = await UserManager.ConfirmEmailAsync(confirmEmailBinding.UserId, confirmEmailBinding.Token);
+            }
+            catch (InvalidOperationException ioe)
+            {
+                // ConfirmEmailAsync throws when the userId is not found.
+                return InternalServerError();
+            }
+
+            if (result.Succeeded)
+            {
+                return Ok();
+            }
+
+            // If we got this far, something failed.
+            return GetErrorResult(result);
         }
 
         // POST api/Account/RegisterExternal

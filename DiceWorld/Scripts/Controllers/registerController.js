@@ -1,11 +1,16 @@
-﻿App.RegisterController = Ember.Controller.extend({
+﻿App.RegisterIndexController = Ember.Controller.extend({
     email: "",
     password: "",
     confirmPassword: "",
 
     errors: [],
 
+    handleSuccess: function(response) {
+        this.transitionToRoute('register.confirm');
+    },
+
     handleError: function (response) {
+        debugger;
         var errors = this.get('errors');
         errors.clear();
         var modelState = response.responseJSON.modelState;
@@ -25,7 +30,8 @@
                 dataType: 'json',
                 contentType: "application/json",
                 data: JSON.stringify(registerData),
-                error: $.proxy(this.handleError, this)
+                error: $.proxy(this.handleError, this),
+                success: $.proxy(this.handleSuccess, this),
             });
         }
     }
