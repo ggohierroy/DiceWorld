@@ -1,6 +1,5 @@
 ﻿App.LoginRoute = Ember.Route.extend({
     beforeModel: function (transition) {
-        debugger;
         if (!transition.queryParams)
             return Ember.RSVP.resolve();
 
@@ -19,7 +18,6 @@
 
     actions: {
         error: function (reason) {
-            debugger;
             alert(reason); // "FAIL"
 
             // Can transition to another route here, e.g.
