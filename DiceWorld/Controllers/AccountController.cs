@@ -375,7 +375,7 @@ namespace DiceWorld.Controllers
 
             if (result.Succeeded)
             {
-                return Ok();
+                return Ok(new { Message = "Confirmation Successful." });
             }
 
             // If we got this far, something failed.

@@ -1,6 +1,14 @@
 ﻿App.LoginController = Ember.Controller.extend({
     queryParams: ['userId', 'token'],
 
+    confirmationSuccessful: function() {
+        return this.get('registrationStatus') === "success";
+    }.property('registrationStatus'),
+
+    confirmationFail: function() {
+        return this.get('registrationStatus') === "fail";
+    }.property('registrationStatus'),
+
     userId: "",
     token: "",
 

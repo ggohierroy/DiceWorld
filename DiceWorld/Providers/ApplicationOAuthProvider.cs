@@ -39,6 +39,14 @@ namespace DiceWorld.Providers
                 return;
             }
 
+            // Disallow users that have not confirmed their email
+            var isEmailConfirmed = await userManager.IsEmailConfirmedAsync(user.Id);
+            if (!isEmailConfirmed)
+            {
+                context.SetError("invalid_grant", "The user's email is not confirmed.");
+                return;
+            }
+
             ClaimsIdentity oAuthIdentity = await user.GenerateUserIdentityAsync(userManager,
                OAuthDefaults.AuthenticationType);
             ClaimsIdentity cookiesIdentity = await user.GenerateUserIdentityAsync(userManager,
