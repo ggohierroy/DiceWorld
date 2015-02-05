@@ -1,5 +1,9 @@
 ﻿App.ApplicationController = Ember.Controller.extend({
 
+    needs: ["login"],
+
+    user: Ember.computed.alias("controllers.login.user"),
+
     inputKeyword: "",
 
     pages: [
