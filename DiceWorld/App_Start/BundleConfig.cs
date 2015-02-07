@@ -14,7 +14,7 @@ namespace DiceWorld
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-2.1.1.js"));
+                        "~/bower_components/jquery/dist/jquery.js"));
 
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
@@ -27,11 +27,12 @@ namespace DiceWorld
                       "~/Scripts/typeahead.bundle.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/ember").Include(
-                      "~/Scripts/handlebars.min.js",
+                      "~/Scripts/handlebars.js",
                       "~/Scripts/ember.debug.js",
                       "~/Scripts/ember-data.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/emberApp").Include(
+                    "~/Scripts/Templates/*.js",
                     "~/Scripts/Application/application.js",
                     "~/Scripts/Models/*.js",
                     "~/Scripts/Controllers/*.js",

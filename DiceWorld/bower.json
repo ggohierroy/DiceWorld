@@ -1,0 +1,24 @@
+{
+  "name": "DiceWorld",
+  "version": "0.0.0",
+  "description": "Board Games Online Store",
+  "authors": [
+    "Gabriel G. Roy"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.3",
+    "ember": "~1.9.1",
+    "bootstrap": "~3.3.2",
+    "ember-data": "~1.0.0-beta.14.1",
+    "typeahead.js": "~0.10.5"
+  }
+}

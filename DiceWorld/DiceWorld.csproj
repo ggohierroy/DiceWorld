@@ -268,8 +268,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\circle.css" />
     <Content Include="Content\Images\Thumbnails\pic1001002_t.jpg" />
     <Content Include="Content\Images\Thumbnails\pic1004112_t.jpg" />
@@ -868,8 +866,8 @@
     <Content Include="Content\Images\Thumbnails\pic994268_t.jpg" />
     <Content Include="Content\Images\Thumbnails\pic994288_t.jpg" />
     <Content Include="favicon.ico" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Gruntfile.js" />
     <Content Include="Scripts\Application\application.js" />
     <Content Include="Areas\HelpPage\Views\Web.config" />
     <Content Include="Areas\HelpPage\Views\Shared\_Layout.cshtml" />
@@ -891,57 +889,22 @@
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
     <Content Include="ApplicationInsights.config" />
-    <Content Include="App_Readme\Handlebarsjs_README.md" />
-    <Content Include="App_Readme\Handlebarsjs_LICENSE" />
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\boardGames.json" />
     <Content Include="Content\tagDefinitions.json" />
+    <Content Include="package.json" />
     <None Include="Properties\PublishProfiles\diceworld.pubxml" />
     <Content Include="Scripts\Components\autocomplete.js" />
     <Content Include="Scripts\Controllers\applicationController.js" />
     <Content Include="Scripts\Controllers\homeController.js" />
     <Content Include="Scripts\Controllers\loginController.js" />
     <Content Include="Scripts\Controllers\registerController.js" />
-    <Content Include="Scripts\ember-data.js.map" />
-    <None Include="Scripts\jquery-2.1.1.intellisense.js" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\Controllers\catalogueIndexController.js" />
     <Content Include="Scripts\Controllers\checkoutController.js" />
-    <Content Include="Scripts\ember-data.js" />
-    <Content Include="Scripts\ember-data.min.js" />
-    <Content Include="Scripts\ember-data.prod.js" />
-    <Content Include="Scripts\ember.debug.js" />
-    <Content Include="Scripts\ember.min.js" />
-    <Content Include="Scripts\ember.prod.js" />
-    <Content Include="Scripts\handlebars.amd.js" />
-    <Content Include="Scripts\handlebars.amd.min.js" />
-    <Content Include="Scripts\handlebars.js" />
-    <Content Include="Scripts\handlebars.min.js" />
-    <Content Include="Scripts\handlebars.runtime.amd.js" />
-    <Content Include="Scripts\handlebars.runtime.amd.min.js" />
-    <Content Include="Scripts\handlebars.runtime.js" />
-    <Content Include="Scripts\handlebars.runtime.min.js" />
-    <Content Include="Scripts\jquery-2.1.1.js" />
-    <Content Include="Scripts\jquery-2.1.1.min.js" />
-    <Content Include="Scripts\jquery-2.1.1.min.map" />
-    <None Include="Scripts\jquery.validate-vsdoc.js" />
-    <Content Include="Scripts\jquery.validate.js" />
-    <Content Include="Scripts\jquery.validate.min.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\Models\cart.js" />
     <Content Include="Scripts\Models\page.js" />
     <Content Include="Scripts\Models\tagDefinition.js" />
     <Content Include="Scripts\Models\boardGame.js" />
     <Content Include="Scripts\Models\boardGameStats.js" />
-    <Content Include="Scripts\modernizr-2.6.2.js" />
-    <Content Include="Scripts\npm.js" />
-    <Content Include="Scripts\respond.js" />
-    <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\Routes\aboutRoute.js" />
     <Content Include="Scripts\Routes\applicationRoute.js" />
     <Content Include="Scripts\Routes\applicationIndexRoute.js" />
@@ -955,9 +918,9 @@
     <Content Include="Scripts\Routes\homeUpcomingRoute.js" />
     <Content Include="Scripts\Routes\loginRoute.js" />
     <Content Include="Scripts\Routes\routerMap.js" />
-    <Content Include="Scripts\typeahead.bundle.js" />
-    <Content Include="Scripts\typeahead.bundle.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -972,7 +935,6 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\ApplicationTemplate.cshtml" />
     <Content Include="Views\Home\HomeTemplate.cshtml" />
     <Content Include="Views\Home\CheckoutTemplate.cshtml" />
     <Content Include="Views\Home\CatalogueIndexTemplate.cshtml" />
@@ -984,6 +946,19 @@
     <Content Include="Views\Home\RegisterTemplate.cshtml" />
     <Content Include="Views\Home\RegisterConfirmTemplate.cshtml" />
     <Content Include="Views\Home\LoginTemplate.cshtml" />
+    <Content Include="Views\Home\ApplicationTemplate.cshtml" />
+    <None Include="Scripts\Templates\about.hbs" />
+    <None Include="Scripts\Templates\application.hbs" />
+    <None Include="Scripts\Templates\boardGame.hbs" />
+    <None Include="Scripts\Templates\catalogue_index.hbs" />
+    <None Include="Scripts\Templates\loading.hbs" />
+    <None Include="Scripts\Templates\checkout.hbs" />
+    <None Include="Scripts\Templates\boardGameList.hbs" />
+    <None Include="Scripts\Templates\home.hbs" />
+    <None Include="Scripts\Templates\home_upcoming.hbs" />
+    <None Include="Scripts\Templates\login.hbs" />
+    <None Include="Scripts\Templates\register_confirm.hbs" />
+    <None Include="Scripts\Templates\register_index.hbs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

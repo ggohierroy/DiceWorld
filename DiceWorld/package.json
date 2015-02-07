@@ -1,0 +1,14 @@
+﻿{
+    "name": "DiceWorld",
+    "version": "1.0.0",
+    "description": "Board Games Online Store",
+    "main": "Gruntfile.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Gabriel G. Roy",
+    "license": "ISC",
+    "devDependencies": {
+        "grunt": "~0.4.5"
+    }
+}
