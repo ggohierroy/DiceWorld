@@ -16,20 +16,14 @@ namespace DiceWorld
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/bower_components/jquery/dist/jquery.js"));
 
-            // Use the development version of Modernizr to develop with and learn from. Then, when you're
-            // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
-            bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
-                        "~/Scripts/modernizr-*"));
-
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                      "~/Scripts/bootstrap.min.js",
-                      "~/Scripts/respond.min.js",
-                      "~/Scripts/typeahead.bundle.js"));
+                      "~/bower_components/bootstrap/dist/js/bootstrap.js",
+                      "~/bower_components/typeahead.js/dist/typeahead.bundle.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/ember").Include(
-                      "~/Scripts/handlebars.js",
-                      "~/Scripts/ember.debug.js",
-                      "~/Scripts/ember-data.js"));
+                      "~/bower_components/handlebars/handlebars.js",
+                      "~/bower_components/ember/ember.js",
+                      "~/bower_components/ember-data/ember-data.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/emberApp").Include(
                     "~/Scripts/Templates/*.js",
@@ -41,7 +35,7 @@ namespace DiceWorld
                     "~/Scripts/Components/*.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
+                      "~/bower_components/bootstrap/dist/css/bootstrap.css",
                       "~/Content/circle.css",
                       "~/Content/site.css"));
         }
