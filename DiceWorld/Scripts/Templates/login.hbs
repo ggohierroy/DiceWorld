@@ -1,0 +1,28 @@
+﻿<div class="container">
+    {{#if confirmationSuccessful}}
+    <div class="alert alert-success alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <strong>Success</strong> You have been successfully registered.
+    </div>
+    {{/if}}
+    {{#if confirmationFail}}
+    <div class="alert alert-danger alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <strong>Error</strong> An error occured while confirming your registration.
+    </div>
+    {{/if}}
+    <form class="form-signin">
+        <h2 class="form-signin-heading">Please sign in</h2>
+        <label for="inputEmail" class="sr-only">Email address</label>
+        {{input type="email" id="inputEmail" class="form-control" placeholder="Email address" autofocus="autofocus" required="required" value=loginEmail}}
+        <label for="inputPassword" class="sr-only">Password</label>
+        {{input type="password" id="inputPassword" class="form-control" placeholder="Password" required="required" value=loginPassword}}
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" value="remember-me"> Remember me
+            </label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" {{action 'login'}}>Sign in</button>
+    </form>
+
+</div>

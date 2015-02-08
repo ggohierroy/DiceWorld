@@ -892,6 +892,7 @@
     <Content Include="Content\boardGames.json" />
     <Content Include="Content\tagDefinitions.json" />
     <Content Include="package.json" />
+    <Content Include="bower.json" />
     <None Include="Properties\PublishProfiles\diceworld.pubxml" />
     <Content Include="Scripts\Components\autocomplete.js" />
     <Content Include="Scripts\Controllers\applicationController.js" />

@@ -1,0 +1,157 @@
+﻿<div class="container">
+    <div class="row">
+        <div class="col-sm-4 col-md-3">
+            <form>
+                <div class="form-group">
+                    <label for="inputKeyword">Keyword</label>
+                    {{auto-complete type="text" class="typeahead form-control" placeholder="Enter Keyword" value=inputKeyword id="inputKeyword" resource-name="boardGames"}}
+                </div>
+                <div class="form-group">
+                    <label>Price</label>
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <label for="inputPriceMin" class="sr-only">Price Min</label>
+                            {{input type="text" class="form-control" value=inputPriceMin id="inputPriceMin" placeholder="Min"}}
+                        </div>
+                        <div class="col-xs-6">
+                            <label for="inputPriceMax" class="sr-only">Price Max</label>
+                            {{input type="text" class="form-control" value=inputPriceMax id="inputPriceMax" placeholder="Max"}}
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Year Published</label>
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <label for="inputPublishedFrom" class="sr-only">Published From</label>
+                            {{input type="text" class="form-control" value=inputPublishedFrom id="inputPublishedFrom" placeholder="From"}}
+                        </div>
+                        <div class="col-xs-6">
+                            <label for="inputPublishedTo" class="sr-only">Published To</label>
+                            {{input type="text" class="form-control" value=inputPublishedTo id="inputPublishedTo" placeholder="To"}}
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Player Count</label>
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <label for="inputMinPlayerCount" class="sr-only">Min Player Count</label>
+                            {{input type="text" class="form-control" value=inputPlayerCountMin id="inputMinPlayerCount" placeholder="Min"}}
+                        </div>
+                        <div class="col-xs-6">
+                            <label for="inputMaxPlayerCount" class="sr-only">Max Player Count</label>
+                            {{input type="text" class="form-control" value=inputPlayerCountMax id="inputMaxPlayerCount" placeholder="Max"}}
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Playing Time (Minutes)</label>
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <label for="inputPlayingTimeMin" class="sr-only">Published From</label>
+                            {{input type="text" class="form-control" value=inputPlayingTimeMin id="inputPlayingTimeMin" placeholder="Min"}}
+                        </div>
+                        <div class="col-xs-6">
+                            <label for="inputPlayingTimeMax" class="sr-only">Published To</label>
+                            {{input type="text" class="form-control" value=inputPlayingTimeMax id="inputPlayingTimeMax" placeholder="Max"}}
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Game Weight (1-5)</label>
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <label for="inputWeightMin" class="sr-only">Min Weight</label>
+                            {{input type="text" class="form-control" value=inputWeightMin id="inputWeightMin" placeholder="Min"}}
+                        </div>
+                        <div class="col-xs-6">
+                            <label for="inputWeightMax" class="sr-only">Max Weigth</label>
+                            {{input type="text" class="form-control" value=inputWeightMax id="inputWeightMax" placeholder="Max"}}
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Rating (1-10)</label>
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <label for="inputRatingMin" class="sr-only">Min Rating</label>
+                            {{input type="text" class="form-control" value=inputRatingMin id="inputRatingMin" placeholder="Min"}}
+                        </div>
+                        <div class="col-xs-6">
+                            <label for="inputRatingMax" class="sr-only">Max Rating</label>
+                            {{input type="text" class="form-control" value=inputRatingMax id="inputRatingMax" placeholder="Max"}}
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Tags</label>
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+                            Select Tags
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu scrollable-menu" role="menu" aria-labelledby="dropdownMenu1">
+                            {{#each tagDefinition in tagDefinitions}}
+                            <li role="presentation"><a {{action 'tagSelected' tagDefinition}} role="menuitem" tabindex="-1">{{tagDefinition.name}}</a></li>
+                            {{/each}}
+                        </ul>
+                    </div>
+                </div>
+                <ul class="list-group">
+                    {{#each inputTag in inputTags}}
+                    <li class="list-group-item">
+                        <button {{action 'removeTag' inputTag}}  type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        {{inputTag.name}}
+                    </li>
+                    {{/each}}
+                </ul>
+                <button {{action 'search'}} class="btn btn-primary">Search</button>
+                <button {{action 'clear'}} class="btn btn-default">Clear</button>
+            </form>
+        </div>
+        <div class="col-sm-8 col-md-9">
+            <!-- Pagination -->
+            <div class="input-group col-centered">
+                <span class="input-group-btn reset-width">
+                    <button type="button" class="btn btn-default" {{action 'fastBackward'}}><span class="glyphicon glyphicon-fast-backward"></span></button>
+                    <button type="button" class="btn btn-default" {{action 'previous'}}><span class="glyphicon glyphicon-step-backward"></span></button>
+                </span>
+                {{input type="text" value=inputPage action="updatePage" on="insert-newline" class="form-control text-center reset-width" size="1" maxlength="3" id="inputPage"}}
+                <span class="input-group-addon reset-width hidden-xs">of {{totalPages}}</span>
+                <span class="input-group-btn reset-width">
+                    <button type="button" class="btn btn-default" {{action 'next'}}><span class="glyphicon glyphicon-step-forward"></span></button>
+                    <button type="button" class="btn btn-default" {{action 'fastForward'}}><span class="glyphicon glyphicon-fast-forward"></span></button>
+                </span>
+            </div>
+
+            <div class="row spacer">
+                {{#each boardGame in controller}}
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="thumbnail">
+                        <img class="img-rounded" {{bind-attr src=boardGame.imageThumbnailUrl}} alt=" ...">
+                        <div class="caption">
+                            <h4>{{boardGame.name}}</h4>
+                            <p>{{#link-to 'boardGame' boardGame class="btn btn-primary"}}More{{/link-to}}<a href="#" class="btn btn-default pull-right" role="button">{{boardGame.price}}$ <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a></p>
+                        </div>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+
+            <!-- Pagination -->
+            <div class="input-group col-centered">
+                <span class="input-group-btn reset-width">
+                    <button type="button" class="btn btn-default" {{action 'fastBackward'}}><span class="glyphicon glyphicon-fast-backward"></span></button>
+                    <button type="button" class="btn btn-default" {{action 'previous'}}><span class="glyphicon glyphicon-step-backward"></span></button>
+                </span>
+                {{input type="text" value=inputPage action="updatePage" on="insert-newline" class="form-control text-center reset-width" size="1" maxlength="3"}}
+                <span class="input-group-addon reset-width hidden-xs">of {{totalPages}}</span>
+                <span class="input-group-btn reset-width">
+                    <button type="button" class="btn btn-default" {{action 'next'}}><span class="glyphicon glyphicon-step-forward"></span></button>
+                    <button type="button" class="btn btn-default" {{action 'fastForward'}}><span class="glyphicon glyphicon-fast-forward"></span></button>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>

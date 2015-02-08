@@ -1,0 +1,25 @@
+﻿<div class="container" ¨>
+    <form id="payment-form">
+        <div class="form-group">
+            <label for="cardNumber">Card Number</label>
+            <input type="text" class="form-control reset-width" id="cardNumber" size="20" data-stripe="number" />
+        </div>
+
+        <div class="form-group">
+            <label for="cvc">CVC</label>
+            <input type="text" class="form-control reset-width" id="cvc" size="4" data-stripe="cvc" />
+        </div>
+
+        <div class="form-group">
+            <label>Expiration</label>
+            <div>
+                <label for="expirationMonth" class="sr-only">Expiration Month</label>
+                <input type="text" class="form-control reset-width" id="expirationMonth" size="2" data-stripe="exp-month" placeholder="MM" />
+                <label for="expirationYear" class="sr-only">Expiration Year</label>
+                <input type="text" class="form-control reset-width" id="expirationYear" size="4" data-stripe="exp-year" placeholder="YYYY" />
+            </div>
+        </div>
+
+        <button {{action 'submit'}} class="btn btn-default">Submit Payment</button>
+    </form>
+</div>
