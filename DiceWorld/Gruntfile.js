@@ -15,15 +15,13 @@
             newSource = newSource.replace('_', '/');
             return newSource.replace('.hbs', '');
         }
-
         var pattern = 'Scripts/Templates/*.hbs';
 
         var output = "";
         glob.sync(pattern).forEach(function (pathMatch) {
-            var contents = fs.readFileSync(pathMatch, { encoding: 'utf8' });
-            contents = contents.replace(/\r\n/g, '\n');
-            var compiled = compiler.precompile(contents, false);
-            output += "Ember.TEMPLATES['" + formatName(pathMatch) + "'] = Ember.Handlebars.template(" + compiled + ");";
+            var input = fs.readFileSync(pathMatch, { encoding: 'utf8' });
+            var template = compiler.precompile(input, false);
+            output += "Ember.TEMPLATES['" + formatName(pathMatch) + "'] = Ember.HTMLBars.template(" + template + ");";
         });
 
         fs.writeFileSync('./Scripts/Templates/templates.js', output, { encoding: 'utf8' });

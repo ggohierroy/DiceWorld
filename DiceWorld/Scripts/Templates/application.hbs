@@ -19,7 +19,7 @@
             </ul>
             <form class="navbar-form navbar-left hidden-sm" role="search">
                 <div class="form-group">
-                    <input type="text" class="form-control" />
+                    {{auto-complete type="text" class="twitter-typeahead form-control" placeholder="Search" value=inputKeyword id="applicationInputKeyword" resource-name="boardGames" autocompleted="autoCompleted" selected="autoCompleted"}}
                 </div>
                 <button {{action "search"}} class="btn btn-default">Submit</button>
             </form>
