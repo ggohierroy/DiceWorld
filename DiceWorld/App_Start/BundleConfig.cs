@@ -21,7 +21,7 @@ namespace DiceWorld
                       "~/bower_components/typeahead.js/dist/typeahead.bundle.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/ember").Include(
-                      "~/bower_components/handlebars/handlebars.js",
+                      "~/bower_components/ember/ember-template-compiler.js",
                       "~/bower_components/ember/ember.js",
                       "~/bower_components/ember-data/ember-data.js"));
 
