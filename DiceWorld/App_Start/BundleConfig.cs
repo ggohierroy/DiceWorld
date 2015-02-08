@@ -26,7 +26,7 @@ namespace DiceWorld
                       "~/bower_components/ember-data/ember-data.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/emberApp").Include(
-                    "~/Scripts/Templates/*.js",
+                    //"~/Scripts/Templates/*.js",
                     "~/Scripts/Application/application.js",
                     "~/Scripts/Models/*.js",
                     "~/Scripts/Controllers/*.js",
