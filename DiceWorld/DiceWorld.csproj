@@ -907,6 +907,7 @@
     <Content Include="Scripts\Models\boardGame.js" />
     <Content Include="Scripts\Models\boardGameStats.js" />
     <Content Include="Scripts\Routes\aboutRoute.js" />
+    <Content Include="Scripts\Routes\accountRoute.js" />
     <Content Include="Scripts\Routes\applicationRoute.js" />
     <Content Include="Scripts\Routes\applicationIndexRoute.js" />
     <Content Include="Scripts\Routes\cartRoute.js" />
@@ -935,7 +936,9 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Scripts\Templates\account.hbs" />
     <None Include="Scripts\Templates\about.hbs" />
+    <Content Include="Scripts\Templates\cart.hbs" />
     <None Include="Scripts\Templates\application.hbs" />
     <None Include="Scripts\Templates\boardGame.hbs" />
     <None Include="Scripts\Templates\catalogue_index.hbs" />

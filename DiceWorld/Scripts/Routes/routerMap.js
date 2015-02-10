@@ -8,6 +8,7 @@
     this.route('about', { path: '/about' });
     this.route('contact', { path: '/contact' });
     this.route('login', { path: '/login' });
+    this.route('account', { path: '/account' });
     this.resource('register', { path: '/register' }, function() {
         this.route('confirm', { path: '/confirm' });
     });
