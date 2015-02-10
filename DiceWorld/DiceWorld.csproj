@@ -232,10 +232,12 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Common\Enums.cs" />
+    <Compile Include="Controllers\CartsController.cs" />
     <Compile Include="Controllers\TagDefinitionsController.cs" />
     <Compile Include="DTOs\BoardGameContainerDTO.cs" />
     <Compile Include="DTOs\BoardGameStatContainerDTO.cs" />
     <Compile Include="DTOs\BoardGameDTO.cs" />
+    <Compile Include="DTOs\CartDTO.cs" />
     <Compile Include="DTOs\TagDefinitionsDTO.cs" />
     <Compile Include="DTOs\TagDefinitionsAutocompleteDTO.cs" />
     <Compile Include="DTOs\BoardGamesAutocompleteDTO.cs" />
@@ -255,9 +257,12 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\BoardGame.cs" />
     <Compile Include="Models\BoardGameStats.cs" />
+    <Compile Include="Models\Cart.cs" />
+    <Compile Include="Models\CartItem.cs" />
     <Compile Include="Models\ChargeModels.cs" />
     <Compile Include="Models\DatabaseContext.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Order.cs" />
     <Compile Include="Models\Tag.cs" />
     <Compile Include="Models\TagDefinition.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -13,6 +13,8 @@ namespace DiceWorld.Models
         public DbSet<BoardGame> BoardGames { get; set; }
         public DbSet<BoardGameStats> BoardGameStats { get; set; }
         public DbSet<Tag> Tags { get; set; } 
-        public DbSet<TagDefinition> TagDefinitions { get; set; } 
+        public DbSet<TagDefinition> TagDefinitions { get; set; }
+
+        public System.Data.Entity.DbSet<DiceWorld.Models.Cart> Carts { get; set; } 
     }
 }
