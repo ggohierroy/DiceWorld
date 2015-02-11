@@ -54,6 +54,7 @@ namespace DiceWorld.Providers
 
             AuthenticationProperties properties = CreateProperties(user.UserName);
             AuthenticationTicket ticket = new AuthenticationTicket(oAuthIdentity, properties);
+
             context.Validated(ticket);
             context.Request.Context.Authentication.SignIn(cookiesIdentity);
         }

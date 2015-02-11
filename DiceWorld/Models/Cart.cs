@@ -13,6 +13,6 @@ namespace DiceWorld.Models
 
         public int UserId { get; set; }
 
-        public List<CartItem> Items { get; set; }  
+        public List<CartItem> CartItems { get; set; }  
     }
 }

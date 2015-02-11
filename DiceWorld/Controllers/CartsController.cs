@@ -9,26 +9,40 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
+using DiceWorld.DTOs;
 using DiceWorld.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 
 namespace DiceWorld.Controllers
 {
+    [RoutePrefix("api")]
     public class CartsController : ApiController
     {
         private DatabaseContext db = new DatabaseContext();
 
         // GET: api/Carts
-        public IQueryable<Cart> GetCarts()
+        [Route("carts")]
+        public CartsDTO GetCarts()
         {
             User.Identity.GetUserId<int>();
 
-            var userId = User.Identity.GetUserId();
+            var userId = User.Identity.GetUserId<int>();
 
-            var carts = db.Carts.Where(c => c.UserId == userId);
+            var carts = db.Carts
+                .Include(c => c.CartItems)
+                .Where(c => c.UserId == userId);
 
-            return db.Carts;
+            return new CartsDTO
+            {
+                Carts = carts.Select(c => new CartDTO
+                {
+                    Id = c.Id,
+                    UserId = c.UserId,
+                    CartItems = c.CartItems.Select(ci => ci.Id).ToList()
+                }),
+                CartItems = carts.SelectMany(c => c.CartItems).ToList()
+            };
         }
 
         // GET: api/Carts/5
