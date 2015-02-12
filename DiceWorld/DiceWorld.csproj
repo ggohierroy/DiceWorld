@@ -86,6 +86,10 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Mvc, Version=5.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Bin\System.Web.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Abstractions" />
@@ -837,6 +841,7 @@
     <Content Include="Scripts\Controllers\checkoutController.js" />
     <Content Include="Scripts\Models\cart.js" />
     <Content Include="Scripts\Models\page.js" />
+    <Content Include="Scripts\Models\session.js" />
     <Content Include="Scripts\Models\tagDefinition.js" />
     <Content Include="Scripts\Models\boardGame.js" />
     <Content Include="Scripts\Models\boardGameStats.js" />

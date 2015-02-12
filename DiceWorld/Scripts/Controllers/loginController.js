@@ -46,10 +46,13 @@
                 url: '/Token',
                 data: loginData
             }).done(function (data) {
+                debugger;
                 self.set('user', data.userName);
                 // Cache the access token in session storage.
                 sessionStorage.setItem(tokenKey, data.access_token);
+                self.session.set('token', data.access_token);
                 //this.get('controllers.application').set('user', data.userName);
+
                 self.transitionToRoute('account');
             }).fail(function(data) {
                 self.showError(data);

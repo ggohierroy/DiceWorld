@@ -25,9 +25,7 @@ namespace DiceWorld.Controllers
         [Route("carts")]
         public CartsDTO GetCarts()
         {
-            User.Identity.GetUserId<int>();
-
-            var userId = User.Identity.GetUserId<int>();
+            var userId = User.Identity.GetUserId<Guid>();
 
             var carts = db.Carts
                 .Include(c => c.CartItems)
