@@ -1,3 +1,4 @@
 ﻿App.Cart = DS.Model.extend({
-    boardGames: DS.hasMany('boardGame', { async: true }),
+    cartItems: DS.hasMany('cartItem', { async: true }),
+    userId: DS.attr('number')
 });

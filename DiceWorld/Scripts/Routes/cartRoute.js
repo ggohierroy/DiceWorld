@@ -1,8 +1,9 @@
 ﻿App.CartRoute = Ember.Route.extend({
     model: function () {
         return this.store.find('cart');
-        // check if user is logged in otherwise create new cart if doesn't exist
-        var cart = this.store.createRecord('cart');
-        return cart;
+    },
+
+    setupController: function (controller, model) {
+        controller.set('model', model.get('firstObject'));
     }
 });

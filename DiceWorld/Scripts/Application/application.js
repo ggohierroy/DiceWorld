@@ -15,7 +15,6 @@ App = Ember.Application.create({
 App.ApplicationAdapter = DS.RESTAdapter.extend({
     namespace: 'api',
     headers: function () {
-        debugger;
         return {
             "Authorization": "Bearer " + this.get("session.token")
         };

@@ -17,6 +17,9 @@ namespace DiceWorld.Models
         [ForeignKey("CartId")]
         public Cart Cart { get; set; }
 
+        public int BoardGameId { get; set; }
+        
+        [ForeignKey("BoardGameId")]
         public BoardGame BoardGame { get; set; }
 
         public int Quantity { get; set; }

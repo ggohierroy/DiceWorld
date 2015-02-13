@@ -31,6 +31,8 @@ namespace DiceWorld.Controllers
                 .Include(c => c.CartItems)
                 .Where(c => c.UserId == userId);
 
+            var cartItems = carts.SelectMany(c => c.CartItems);
+
             return new CartsDTO
             {
                 Carts = carts.Select(c => new CartDTO
@@ -39,7 +41,29 @@ namespace DiceWorld.Controllers
                     UserId = c.UserId,
                     CartItems = c.CartItems.Select(ci => ci.Id).ToList()
                 }),
-                CartItems = carts.SelectMany(c => c.CartItems).ToList()
+                CartItems = cartItems.Select(c => new CartItemDTO
+                {
+                    BoardGame = c.BoardGameId,
+                    Cart = c.CartId,
+                    Id = c.Id,
+                    Quantity = c.Quantity
+                }).ToList(),
+                BoardGames = cartItems.Select(c => new BoardGameDTO
+                {
+                    BGGId = c.BoardGame.BGGId,
+                    BoardGameStat = c.BoardGame.Id, // One-to-one relationship = same id
+                    Description = c.BoardGame.Description,
+                    Id = c.BoardGame.Id,
+                    ImageId = c.BoardGame.ImageId,
+                    MaxPlayers = c.BoardGame.MaxPlayers,
+                    MinAge = c.BoardGame.MinAge,
+                    MinPlayers = c.BoardGame.MinPlayers,
+                    Name = c.BoardGame.Name,
+                    PlayingTime = c.BoardGame.PlayingTime,
+                    Price = c.BoardGame.Price,
+                    TagDefinitions = c.BoardGame.Tags.Select(t => t.TagDefinitionId).ToList(),
+                    YearPublished = c.BoardGame.YearPublished
+                }).ToList()
             };
         }
 

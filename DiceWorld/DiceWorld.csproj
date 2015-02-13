@@ -190,6 +190,7 @@
     <Compile Include="DTOs\BoardGameStatContainerDTO.cs" />
     <Compile Include="DTOs\BoardGameDTO.cs" />
     <Compile Include="DTOs\CartDTO.cs" />
+    <Compile Include="DTOs\CartItemDTO.cs" />
     <Compile Include="DTOs\CartsDTO.cs" />
     <Compile Include="DTOs\TagDefinitionsDTO.cs" />
     <Compile Include="DTOs\TagDefinitionsAutocompleteDTO.cs" />
@@ -834,12 +835,14 @@
     <None Include="Properties\PublishProfiles\diceworld.pubxml" />
     <Content Include="Scripts\Components\autocomplete.js" />
     <Content Include="Scripts\Controllers\applicationController.js" />
+    <Content Include="Scripts\Controllers\CartController.js" />
     <Content Include="Scripts\Controllers\homeController.js" />
     <Content Include="Scripts\Controllers\loginController.js" />
     <Content Include="Scripts\Controllers\registerController.js" />
     <Content Include="Scripts\Controllers\catalogueIndexController.js" />
     <Content Include="Scripts\Controllers\checkoutController.js" />
     <Content Include="Scripts\Models\cart.js" />
+    <Content Include="Scripts\Models\cartItem.js" />
     <Content Include="Scripts\Models\page.js" />
     <Content Include="Scripts\Models\session.js" />
     <Content Include="Scripts\Models\tagDefinition.js" />

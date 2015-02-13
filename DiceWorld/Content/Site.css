@@ -10,6 +10,11 @@ body { padding-top: 70px; }
     width: auto !important;
 }
 
+/* Makes the mouse a pointer when hovering on table rows */
+.table-hover tbody tr:hover > td {
+  cursor: pointer
+}
+
 /* Display pre-formatted game descriptions correctly */
 .no-word-break {
     word-break: normal;

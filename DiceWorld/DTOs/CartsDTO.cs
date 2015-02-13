@@ -10,6 +10,8 @@ namespace DiceWorld.DTOs
     {
         public IQueryable<CartDTO> Carts { get; set; }
 
-        public List<CartItem> CartItems { get; set; } 
+        public List<CartItemDTO> CartItems { get; set; }
+
+        public List<BoardGameDTO> BoardGames { get; set; }
     }
 }
