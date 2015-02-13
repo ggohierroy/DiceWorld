@@ -4,16 +4,16 @@
         <thead>
             <tr>
                 <th>Item</th>
-                <th>Quantity</th>
-                <th>Price</th>
+                <th class="text-center">Quantity</th>
+                <th class="text-center">Price</th>
             </tr>
         </thead>
         <tbody>
             {{#each cartItem in model.cartItems}}
             {{#link-to 'boardGame' cartItem.boardGame tagName="tr"}}
                 <td>{{cartItem.boardGame.name}}</td>
-                <td>{{cartItem.quantity}}</td>
-                <td>{{cartItem.boardGame.price}}</td>
+                <td class="text-center">{{cartItem.quantity}}</td>
+                <td class="text-center">{{cartItem.boardGame.price}}</td>
             {{/link-to}}
             {{/each}}
         </tbody>
