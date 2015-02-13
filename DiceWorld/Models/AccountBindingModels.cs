@@ -86,7 +86,7 @@ namespace DiceWorld.Models
     {
         [Required(AllowEmptyStrings = false)]
         [Display(Name = "User Identifier")]
-        public string UserId { get; set; }
+        public int UserId { get; set; }
 
         [Required(AllowEmptyStrings = false)]
         [Display(Name = "Token")]
