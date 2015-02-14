@@ -29,12 +29,10 @@
     },
 
     tokenOrUserChanged: function () {
-        debugger;
         Ember.run.once(this, 'saveSession');
     }.observes('token'),
 
     userChanged: function () {
-        debugger;
         var user = this.get('user');
         this.setProperties({ userId: user.id, username: user.get('name') });
         this.saveSession();
