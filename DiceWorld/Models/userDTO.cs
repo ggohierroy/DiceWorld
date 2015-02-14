@@ -13,6 +13,8 @@ namespace DiceWorld.Models
 
         public int? Cart { get; set; }
 
-        public List<int> Orders { get; set; } 
+        public List<int> Orders { get; set; }
+
+        public bool Anonymous { get; set; }
     }
 }

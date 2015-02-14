@@ -28,7 +28,8 @@ namespace DiceWorld.Controllers
                     Cart = cart == null ? null : (int?) cart.Id,
                     Name = User.Identity.Name,
                     Id = userId,
-                    Orders = null
+                    Orders = null,
+                    Anonymous = false
                 }
             });
         }

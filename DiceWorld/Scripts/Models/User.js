@@ -1,4 +1,5 @@
 ﻿App.User = DS.Model.extend({
     cart: DS.belongsTo('cart', { async: true }),
-    name: DS.attr('string')
+    name: DS.attr('string'),
+    anonymous: DS.attr('boolean')
 });

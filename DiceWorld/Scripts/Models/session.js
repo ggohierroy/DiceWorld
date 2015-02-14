@@ -28,6 +28,15 @@
         this.set('username', null);
     },
 
+    createAnonymousUser: function (store) {
+        var cart = store.createRecord('cart');
+        this.set('user', store.createRecord('user', {
+            anonymous: true,
+            name: 'anonymous',
+            cart: cart
+        }));
+    },
+
     tokenOrUserChanged: function () {
         Ember.run.once(this, 'saveSession');
     }.observes('token'),
