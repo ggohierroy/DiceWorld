@@ -44,11 +44,14 @@
 
                 self.session.setProperties({
                     token: data.access_token,
-                    user: data.userName,
                     userId: data.userId
                 });
 
-                self.transitionToRoute('account');
+                self.store.find('user', data.userId).then(function (user) {
+                    self.session.set('user', user);
+                    self.transitionToRoute('account');
+                });
+
             }).fail(function(data) {
                 self.showError(data);
             });

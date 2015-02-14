@@ -190,6 +190,7 @@
     <Compile Include="DTOs\BoardGameContainerDTO.cs" />
     <Compile Include="DTOs\BoardGameStatContainerDTO.cs" />
     <Compile Include="DTOs\BoardGameDTO.cs" />
+    <Compile Include="DTOs\CartContainerDTO.cs" />
     <Compile Include="DTOs\CartDTO.cs" />
     <Compile Include="DTOs\CartItemDTO.cs" />
     <Compile Include="DTOs\CartsDTO.cs" />
@@ -205,6 +206,7 @@
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="DTOs\BoardGameSearchParameters.cs" />
     <Compile Include="DTOs\Meta.cs" />
+    <Compile Include="DTOs\UserContainerDTO.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -837,7 +839,7 @@
     <None Include="Properties\PublishProfiles\diceworld.pubxml" />
     <Content Include="Scripts\Components\autocomplete.js" />
     <Content Include="Scripts\Controllers\applicationController.js" />
-    <Content Include="Scripts\Controllers\CartController.js" />
+    <Content Include="Scripts\Controllers\cartController.js" />
     <Content Include="Scripts\Controllers\homeNewController.js" />
     <Content Include="Scripts\Controllers\homeController.js" />
     <Content Include="Scripts\Controllers\loginController.js" />

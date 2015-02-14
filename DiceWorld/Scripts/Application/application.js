@@ -5,6 +5,7 @@
         application.register('session:main', App.Session);
         application.inject('controller', 'session', 'session:main');
         application.inject('adapter', 'session', 'session:main');
+        application.inject('route', 'session', 'session:main');
     }
 });
 

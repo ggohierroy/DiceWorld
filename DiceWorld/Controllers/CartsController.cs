@@ -21,34 +21,38 @@ namespace DiceWorld.Controllers
     {
         private DatabaseContext db = new DatabaseContext();
 
-        // GET: api/Carts
-        [Route("carts")]
-        public CartsDTO GetCarts()
+        // GET: api/Carts/5
+        [Route("carts/{id:int}")]
+        [ResponseType(typeof(Cart))]
+        public async Task<IHttpActionResult> GetCart(int id)
         {
             var userId = User.Identity.GetUserId<int>();
 
-            var carts = db.Carts
-                .Include(c => c.CartItems)
-                .Where(c => c.UserId == userId);
+            var cart = await db.Carts
+                .Include(c => c.CartItems.Select(ci => ci.BoardGame.Tags))
+                .FirstOrDefaultAsync(c => c.UserId == userId);
 
-            var cartItems = carts.SelectMany(c => c.CartItems);
-
-            return new CartsDTO
+            if (cart == null)
             {
-                Carts = carts.Select(c => new CartDTO
+                return NotFound();
+            }
+
+            return Ok(new CartContainerDTO 
+            { 
+                Cart = new CartDTO
                 {
-                    Id = c.Id,
-                    User = c.UserId,
-                    CartItems = c.CartItems.Select(ci => ci.Id).ToList()
-                }),
-                CartItems = cartItems.Select(c => new CartItemDTO
+                    Id = cart.Id,
+                    User = cart.UserId,
+                    CartItems = cart.CartItems.Select(ci => ci.Id).ToList()
+                },
+                CartItems = cart.CartItems.Select(c => new CartItemDTO
                 {
                     BoardGame = c.BoardGameId,
                     Cart = c.CartId,
                     Id = c.Id,
                     Quantity = c.Quantity
                 }).ToList(),
-                BoardGames = cartItems.Select(c => new BoardGameDTO
+                BoardGames = cart.CartItems.Select(c => new BoardGameDTO
                 {
                     BGGId = c.BoardGame.BGGId,
                     BoardGameStat = c.BoardGame.Id, // One-to-one relationship = same id
@@ -64,20 +68,7 @@ namespace DiceWorld.Controllers
                     TagDefinitions = c.BoardGame.Tags.Select(t => t.TagDefinitionId).ToList(),
                     YearPublished = c.BoardGame.YearPublished
                 }).ToList()
-            };
-        }
-
-        // GET: api/Carts/5
-        [ResponseType(typeof(Cart))]
-        public async Task<IHttpActionResult> GetCart(int id)
-        {
-            Cart cart = await db.Carts.FindAsync(id);
-            if (cart == null)
-            {
-                return NotFound();
-            }
-
-            return Ok(cart);
+            });
         }
 
         // PUT: api/Carts/5

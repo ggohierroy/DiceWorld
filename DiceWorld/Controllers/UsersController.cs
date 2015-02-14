@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
+﻿using System.Data.Entity;
 using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
@@ -18,7 +13,7 @@ namespace DiceWorld.Controllers
     {
         private DatabaseContext db = new DatabaseContext();
 
-        [ResponseType(typeof (userDTO))]
+        [ResponseType(typeof (UserDTO))]
         [Route("users/{id:int}")]
         public async Task<IHttpActionResult> GetUser(int id)
         {
@@ -26,11 +21,15 @@ namespace DiceWorld.Controllers
 
             var cart = await db.Carts.FirstOrDefaultAsync(c => c.UserId == userId);
 
-            return Ok(new userDTO
-            {
-                Cart = cart == null ? null : (int?) cart.Id,
-                Id = userId,
-                Orders = null
+            return Ok(new UserContainerDTO
+            { 
+                User = new UserDTO
+                {
+                    Cart = cart == null ? null : (int?) cart.Id,
+                    Name = User.Identity.Name,
+                    Id = userId,
+                    Orders = null
+                }
             });
         }
 

@@ -101,7 +101,7 @@ namespace DiceWorld.Providers
             IDictionary<string, string> data = new Dictionary<string, string>
             {
                 { "userName", userName },
-                { "UserId", userId.ToString(CultureInfo.InvariantCulture) }
+                { "userId", userId.ToString(CultureInfo.InvariantCulture) }
             };
             return new AuthenticationProperties(data);
         }

@@ -1,3 +1,3 @@
-﻿App.CartAddRoute = Ember.route.extend({
+﻿App.CartAddRoute = Ember.Route.extend({
     
 })

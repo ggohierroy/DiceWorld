@@ -25,8 +25,8 @@
             </form>
             <ul class="nav navbar-nav navbar-right">
                 <li>{{#link-to 'cart' class="glyphicon glyphicon-shopping-cart"}}{{/link-to}}</li>
-                {{#if session.user}}
-                <li>{{#link-to 'account'}}{{session.user}}{{/link-to}}</li>
+                {{#if session.username}}
+                <li>{{#link-to 'account'}}{{session.username}}{{/link-to}}</li>
                 <li><button {{action 'signOut'}} type="button" class="btn btn-default navbar-btn">Sign Out</button></li>
                 {{else}}
                 <li>{{#link-to 'login'}}Sign In{{/link-to}}</li>
