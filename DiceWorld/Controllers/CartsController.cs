@@ -38,7 +38,7 @@ namespace DiceWorld.Controllers
                 Carts = carts.Select(c => new CartDTO
                 {
                     Id = c.Id,
-                    UserId = c.UserId,
+                    User = c.UserId,
                     CartItems = c.CartItems.Select(ci => ci.Id).ToList()
                 }),
                 CartItems = cartItems.Select(c => new CartItemDTO

@@ -24,6 +24,12 @@
         },
         search: function () {
             this.transitionToRoute('catalogue', { queryParams: { keyword: this.get('inputKeyword') } });
+        },
+        signOut: function() {
+            this.session.setProperties({
+                token: null,
+                user: null
+            });
         }
     }
 })

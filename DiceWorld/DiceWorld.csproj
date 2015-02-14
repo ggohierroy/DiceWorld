@@ -186,6 +186,7 @@
     <Compile Include="Common\Enums.cs" />
     <Compile Include="Controllers\CartsController.cs" />
     <Compile Include="Controllers\TagDefinitionsController.cs" />
+    <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="DTOs\BoardGameContainerDTO.cs" />
     <Compile Include="DTOs\BoardGameStatContainerDTO.cs" />
     <Compile Include="DTOs\BoardGameDTO.cs" />
@@ -219,6 +220,7 @@
     <Compile Include="Models\Order.cs" />
     <Compile Include="Models\Tag.cs" />
     <Compile Include="Models\TagDefinition.cs" />
+    <Compile Include="Models\userDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
     <Compile Include="Providers\EmailProvider.cs" />
@@ -836,18 +838,21 @@
     <Content Include="Scripts\Components\autocomplete.js" />
     <Content Include="Scripts\Controllers\applicationController.js" />
     <Content Include="Scripts\Controllers\CartController.js" />
+    <Content Include="Scripts\Controllers\homeNewController.js" />
     <Content Include="Scripts\Controllers\homeController.js" />
     <Content Include="Scripts\Controllers\loginController.js" />
     <Content Include="Scripts\Controllers\registerController.js" />
     <Content Include="Scripts\Controllers\catalogueIndexController.js" />
     <Content Include="Scripts\Controllers\checkoutController.js" />
     <Content Include="Scripts\Models\cart.js" />
+    <Content Include="Scripts\Routes\cartAddRoute.js" />
     <Content Include="Scripts\Models\cartItem.js" />
     <Content Include="Scripts\Models\page.js" />
     <Content Include="Scripts\Models\session.js" />
     <Content Include="Scripts\Models\tagDefinition.js" />
     <Content Include="Scripts\Models\boardGame.js" />
     <Content Include="Scripts\Models\boardGameStats.js" />
+    <Content Include="Scripts\Models\user.js" />
     <Content Include="Scripts\Routes\aboutRoute.js" />
     <Content Include="Scripts\Routes\accountRoute.js" />
     <Content Include="Scripts\Routes\applicationRoute.js" />

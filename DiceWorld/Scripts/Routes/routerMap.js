@@ -12,7 +12,9 @@
     this.resource('register', { path: '/register' }, function() {
         this.route('confirm', { path: '/confirm' });
     });
-    this.route('cart', { path: '/cart' });
+    this.resource('cart', { path: '/cart' }, function() {
+        this.route('add', { path: '/add/:boardGame_id' });
+    });
     this.resource('catalogue', { path: '/catalogue' }, function() {
         this.resource('boardGame', { path: '/boardGame/:boardGame_id' });
     });

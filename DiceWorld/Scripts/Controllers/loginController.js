@@ -18,7 +18,6 @@
     loginEmail: "",
     loginPassword: "",
 
-    tokenKey: 'accessToken',
     result: "",
 
     showError: function(response) {
@@ -36,8 +35,6 @@
                 password: this.get('loginPassword')
             };
 
-            var tokenKey = this.get('tokenKey');
-
             var self = this;
             Ember.$.ajax({
                 type: 'POST',
@@ -47,7 +44,8 @@
 
                 self.session.setProperties({
                     token: data.access_token,
-                    user: data.userName
+                    user: data.userName,
+                    userId: data.userId
                 });
 
                 self.transitionToRoute('account');

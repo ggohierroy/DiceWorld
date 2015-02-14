@@ -15,6 +15,9 @@
             this.get('pages').forEach(function (item) { item.set('isActive', false); });
             page.set('isActive', true);
             this.transitionToRoute(page.get('route'));
+        },
+        addToCart: function(boardGame) {
+            alert(boardGame.get('name'));
         }
     }
 });

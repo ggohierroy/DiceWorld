@@ -4,7 +4,7 @@
         <img class="img-rounded" {{bind-attr src=boardGame.imageThumbnailUrl}} alt=" ...">
         <div class="caption">
             <h4>{{boardGame.name}}</h4>
-            <p>{{#link-to 'boardGame' boardGame class="btn btn-primary"}}More{{/link-to}}<a href="#" class="btn btn-default pull-right" role="button">{{boardGame.price}}$ <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a></p>
+            <p>{{#link-to 'boardGame' boardGame class="btn btn-primary"}}More{{/link-to}}<a {{action 'addToCart' boardGame}} class="btn btn-default pull-right" role="button">{{boardGame.price}}$ <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a></p>
         </div>
     </div>
 </div>

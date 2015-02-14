@@ -1,4 +1,4 @@
 ﻿App.Cart = DS.Model.extend({
     cartItems: DS.hasMany('cartItem', { async: true }),
-    userId: DS.attr('number')
+    user: DS.belongsTo('user')
 });
