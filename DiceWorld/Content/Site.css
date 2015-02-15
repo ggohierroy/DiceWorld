@@ -49,6 +49,17 @@ body { padding-top: 70px; }
     overflow-x: hidden;
 }
 
+/* Size images in the cart */
+.cart-item-image {
+    height: 100px;
+}
+
+.table tbody>tr>td.cart-item,
+.table tfoot>tr>td.cart-item {
+    font-size: large;
+    vertical-align: middle;
+}
+
 /*  Tablet  */
 @media (min-width:767px){
 

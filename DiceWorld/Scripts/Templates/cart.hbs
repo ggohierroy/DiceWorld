@@ -1,21 +1,39 @@
 <div class="container">
     <h1>Cart</h1>
+    {{#if model.cartItems}}
     <table class="table table-striped table-hover">
         <thead>
             <tr>
+                <th></th>
                 <th>Item</th>
                 <th class="text-center">Quantity</th>
                 <th class="text-center">Price</th>
+                <th class="text-center">Price</th>
             </tr>
         </thead>
+        <tfoot>
+            <tr>
+                <td></td>
+                <td></td>
+                <td class="text-center cart-item">Total:</td>
+                <td class="text-center cart-item">{{model.total}}</td>
+                <td></td>
+            </tr>
+        </tfoot>
         <tbody>
             {{#each cartItem in model.cartItems}}
             {{#link-to 'boardGame' cartItem.boardGame tagName="tr"}}
-                <td>{{cartItem.boardGame.name}}</td>
-                <td class="text-center">{{cartItem.quantity}}</td>
-                <td class="text-center">{{cartItem.boardGame.price}}</td>
+                <td><img class="img-rounded cart-item-image" {{bind-attr src=cartItem.boardGame.imageThumbnailUrl}} alt=" ..."></td>
+                <td class="cart-item">{{cartItem.boardGame.name}}</td>
+                <td {{action 'quantityClicked' bubbles=false}} class="text-center cart-item">{{input class="form-control reset-width text-center center-block" type="text" value=cartItem.quantity size="4"}}</td>
+                <td class="text-center cart-item">{{cartItem.boardGame.price}}</td>
+                <td class="text-center cart-item"><button {{action 'remove' cartItem}} class="btn btn-default">Remove</button></td>
             {{/link-to}}
             {{/each}}
         </tbody>
     </table>
+    {{else}}
+    <h2>Your cart is empty.</h2>
+    {{/if}}
+    <button {{action 'checkout'}} class="btn btn-primary btn-lg pull-right">Checkout</button>
 </div>

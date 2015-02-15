@@ -21,5 +21,14 @@
         }
 
         this.transitionToRoute('cart');
+    },
+
+    actions: {
+        quantityClicked: function() {
+            
+        },
+        remove: function(cartItem) {
+            this.get('model.cartItems').removeObject(cartItem);
+        }
     }
 })
