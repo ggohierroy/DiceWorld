@@ -50,11 +50,23 @@
     userId: null,
     user: null,
 
-    signOut: function() {
+    anonymousUser: null,
+
+    signOut: function (store) {
+
         this.setProperties({ token: null, userId: null, user: null, cartItems: null });
 
         sessionStorage.removeItem(this.get('sessionKey'));
         sessionStorage.removeItem(this.get('itemsKey'));
+
+        this.createAnonymousUser(store);
+    },
+
+    setUser: function (user, store) {
+
+        // TODO: Merge anonymous user cart
+
+        this.set('user', user);
     },
 
     createAnonymousUser: function (store) {

@@ -7,12 +7,13 @@
         if (cartItem) {
             cartItem.incrementProperty('quantity');
         } else {
+
             cartItem = this.store.createRecord('cartItem', {
                 cart: cart,
                 boardGame: boardGame,
                 quantity: 1
             });
-
+            
             cart.get('cartItems').pushObject(cartItem);
         }
 
@@ -21,6 +22,10 @@
         }
 
         this.transitionToRoute('cart');
+    },
+
+    signOut: function() {
+        this.set('model', null);
     },
 
     actions: {

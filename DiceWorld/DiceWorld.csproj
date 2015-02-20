@@ -838,6 +838,7 @@
     <Content Include="bower.json" />
     <None Include="Properties\PublishProfiles\diceworld.pubxml" />
     <Content Include="Scripts\Components\autocomplete.js" />
+    <Content Include="Scripts\Controllers\accountController.js" />
     <Content Include="Scripts\Controllers\applicationController.js" />
     <Content Include="Scripts\Controllers\cartController.js" />
     <Content Include="Scripts\Controllers\homeNewController.js" />
@@ -859,6 +860,7 @@
     <Content Include="Scripts\Routes\accountRoute.js" />
     <Content Include="Scripts\Routes\applicationRoute.js" />
     <Content Include="Scripts\Routes\applicationIndexRoute.js" />
+    <Content Include="Scripts\Routes\checkoutRoute.js" />
     <Content Include="Scripts\Routes\cartRoute.js" />
     <Content Include="Scripts\Routes\catalogueRoute.js" />
     <Content Include="Scripts\Routes\catalogueIndexRoute.js" />

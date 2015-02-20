@@ -1,6 +1,7 @@
 ﻿App.ApplicationController = Ember.Controller.extend({
 
     inputKeyword: "",
+    needs: ['cart'],
 
     pages: [
         App.Page.create({ name: 'Home', isActive: false, route: 'home' }),
@@ -26,7 +27,10 @@
             this.transitionToRoute('catalogue', { queryParams: { keyword: this.get('inputKeyword') } });
         },
         signOut: function() {
-            this.session.signOut();
+            this.session.signOut(this.store);
+            // Clears cart and account info
+            this.get('controllers.cart').signOut();
+            //this.get('controllers.account').signOut();
         }
     }
 })

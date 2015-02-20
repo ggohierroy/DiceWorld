@@ -48,7 +48,7 @@
                 });
 
                 self.store.find('user', data.userId).then(function (user) {
-                    self.session.set('user', user);
+                    self.session.setUser(user, self.store);
                     self.transitionToRoute('account');
                 });
 

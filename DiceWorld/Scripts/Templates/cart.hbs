@@ -32,8 +32,8 @@
             {{/each}}
         </tbody>
     </table>
+    {{#link-to 'checkout'}}<button class="btn btn-primary btn-lg pull-right">Checkout</button>{{/link-to}}
     {{else}}
     <h2>Your cart is empty.</h2>
     {{/if}}
-    <button {{action 'checkout'}} class="btn btn-primary btn-lg pull-right">Checkout</button>
 </div>
