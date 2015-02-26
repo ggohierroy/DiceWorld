@@ -84,10 +84,10 @@
             this.set('page', this.get('inputPage'));
         },
         next: function() {
-            this.set('page', this.get('page') + 1);
+            this.incrementProperty('page');
         },
         previous: function() {
-            this.set('page', this.get('page') - 1);
+            this.decrementProperty('page');
         },
         fastForward: function() {
             this.set('page', this.get('totalPages'));

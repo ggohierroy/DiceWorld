@@ -54,6 +54,13 @@ body { padding-top: 70px; }
     height: 100px;
 }
 
+/* Cuts title of board game in catalogue */
+.chop-title {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
 .table tbody>tr>td.cart-item,
 .table tfoot>tr>td.cart-item {
     font-size: large;
