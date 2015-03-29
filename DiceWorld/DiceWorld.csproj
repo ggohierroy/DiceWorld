@@ -1446,7 +1446,6 @@
     <Content Include="bower_components\bootstrap\dist\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="bower_components\bootstrap\dist\fonts\glyphicons-halflings-regular.woff2" />
     <None Include="Properties\PublishProfiles\diceworld.ca - Web Deploy.pubxml" />
-    <None Include="Properties\PublishProfiles\diceworld.pubxml" />
     <Content Include="Scripts\Components\autocomplete.js" />
     <Content Include="Scripts\Controllers\accountController.js" />
     <Content Include="Scripts\Controllers\applicationController.js" />
