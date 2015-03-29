@@ -34,10 +34,10 @@ namespace DiceWorld
                     //"~/Scripts/Views/*.js",
                     "~/Scripts/Components/*.js"));
 
-            bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/bower_components/bootstrap/dist/css/bootstrap.css",
-                      "~/Content/circle.css",
-                      "~/Content/site.css"));
+            bundles.Add(new StyleBundle("~/Content/css")
+                .Include("~/bower_components/bootstrap/dist/css/bootstrap.css", new CssRewriteUrlTransform())
+                .Include("~/Content/circle.css")
+                .Include("~/Content/site.css"));
         }
     }
 }
