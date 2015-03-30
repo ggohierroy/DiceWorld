@@ -23,7 +23,7 @@
         <tbody>
             {{#each cartItem in model.cartItems}}
             {{#link-to 'boardGame' cartItem.boardGame tagName="tr"}}
-                <td><img class="img-rounded cart-item-image" {{bind-attr src=cartItem.boardGame.imageThumbnailUrl}} alt=" ..."></td>
+                <td><img class="img-rounded cart-item-image" src="{{cartItem.boardGame.imageThumbnailUrl}}" alt=" ..."></td>
                 <td class="cart-item">{{cartItem.boardGame.name}}</td>
                 <td {{action 'quantityClicked' bubbles=false}} class="text-center cart-item">{{input class="form-control reset-width text-center center-block" type="text" value=cartItem.quantity size="4"}}</td>
                 <td class="text-center cart-item">{{cartItem.boardGame.price}}</td>

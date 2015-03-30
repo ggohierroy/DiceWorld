@@ -1,7 +1,7 @@
 {{#each boardGame in controller}}
 <div class="col-lg-3 col-md-4 col-sm-6">
     <div class="thumbnail">
-        <img class="img-rounded" {{bind-attr src=boardGame.imageThumbnailUrl}} alt=" ...">
+        <img class="img-rounded" src="{{boardGame.imageThumbnailUrl}}" alt=" ...">
         <div class="caption">
             <h4>{{boardGame.name}}</h4>
             <p>{{#link-to 'boardGame' boardGame class="btn btn-primary"}}More{{/link-to}}<a href="#" class="btn btn-default pull-right" role="button">{{boardGame.price}}$ <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a></p>

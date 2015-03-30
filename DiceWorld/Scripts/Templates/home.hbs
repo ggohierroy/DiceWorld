@@ -5,7 +5,7 @@
         <div class="col-sm-2">
             <ul class="nav nav-pills nav-stacked">
                 {{#each page in pages}}
-                <li {{bind-attr class="page.isActive:active" role="presentation"}}><a href="javascript:undefined" {{action 'navigate' page}}>{{page.name}}</a></li>
+                <li class="{{if page.isActive 'active'}}" role="presentation"><a href="javascript:undefined" {{action 'navigate' page}}>{{page.name}}</a></li>
                 {{/each}}
             </ul>
         </div>

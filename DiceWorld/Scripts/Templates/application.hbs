@@ -14,7 +14,7 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 {{#each page in pages}}
-                <li {{bind-attr class="page.isActive:active"}}><a href="javascript:undefined" {{action 'navigate' page}}>{{page.name}}</a></li>
+                <li class="{{if page.isActive 'active'}}"><a href="javascript:undefined" {{action 'navigate' page}}>{{page.name}}</a></li>
                 {{/each}}
             </ul>
             <form class="navbar-form navbar-left hidden-sm" role="search">

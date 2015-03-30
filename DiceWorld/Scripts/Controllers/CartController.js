@@ -1,4 +1,4 @@
-﻿App.CartController = Ember.ObjectController.extend({
+﻿App.CartController = Ember.Controller.extend({
     addToCart: function (boardGame) {
         var cart = this.session.get('user.cart');
 

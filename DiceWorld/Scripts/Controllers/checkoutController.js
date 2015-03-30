@@ -1,4 +1,4 @@
-﻿App.CheckoutController = Ember.ObjectController.extend({
+﻿App.CheckoutController = Ember.Controller.extend({
 
     actions: {
         submit: function () {
